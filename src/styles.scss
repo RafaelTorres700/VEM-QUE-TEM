@@ -1,1 +1,237 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    // Cores baseadas no gradiente noturno da imagem
+    --background-color: #2F004F; // Roxo escuro, como a base do fundo
+    --surface-color: #4B0082; // Um roxo azulado para elementos de superfície
+    --surface-color-secondary: #6A00A8; // Um roxo mais vibrante
+    --primary-color: #E00080; // Magenta/Rosa forte do gradiente
+    --secondary-color: #FF69B4; // Rosa/Pêssego para detalhes ou a blusa da mulher
+    --accent-color: #00FFFF; // Azul/Ciano para acentos ou parte do texto
+    --text-color: #FFFFFF; // Branco para textos principais, como "VEM QUE TEM"
+    --text-secondary-color: #C0C0C0; // Um cinza claro para textos secundários
+    --text-tertiary-color: #999999; // Um cinza médio para textos terciários
+    --border-color: #8A2BE2; // Um roxo médio para bordas
+    --sidebar-color: #1A0033; // Um roxo ainda mais escuro para a sidebar
+}
+
+.light-theme {
+    // Para o tema claro, podemos usar as cores da imagem de forma mais suave ou inverter a lógica
+    // Mantendo uma vibe "Vem Que Tem" mas com fundo claro.
+    --background-color: #F8F8FF; // Quase branco, suave
+    --surface-color: #FFFFFF; // Branco puro
+    --surface-color-secondary: #EEE8AA; // Um tom creme claro
+    --primary-color: #DDA0DD; // Roxo claro/Lilás
+    --secondary-color: #FFC0CB; // Rosa claro
+    --accent-color: #4682B4; // Azul metálico
+    --text-color: #2F004F; // Roxo escuro para o texto
+    --text-secondary-color: #6A00A8; // Roxo mais vibrante para texto secundário
+    --text-tertiary-color: #E00080; // Magenta para texto terciário
+    --border-color: #D8BFD8; // Lilás claro para bordas
+    --sidebar-color: #F0F8FF; // Azul Alice para a sidebar
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+header,
+footer {
+    background: linear-gradient(135deg, var(--sidebar-color) 70%, var(--surface-color) 100%);
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(44, 44, 44, 0.12);
+}
+footer {
+    padding: 15px;
+    text-align: center;  /* Centraliza o texto, se desejar */
+    position: fixed; /* Fixa o elemento na tela */
+    bottom: 0;       /* Garante que ele fique na parte inferior */
+    left: 0;         /* Alinha à esquerda da tela */
+    width: 100%;     /* Faz com que ocupe toda a largura da tela */
+    z-index: 1000;   /* Garante que ele fique acima de outros elementos, se necessário */
+}
+
+
+
+button {
+    background: var(--primary-color);
+    color: var(--background-color);
+    border: 1px solid var(--border-color);
+    padding: 0.45rem .75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: var(--accent-color);
+    color: var(--surface-color);
+    /* cursor: pointer; */
+}
+
+
+
+
+input {
+    padding: 0.6rem 0.9rem;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+textarea {
+    padding: 0.6rem 0.9rem;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+    resize: vertical;
+}
+textarea:focus{
+    border: 1.5px solid var(--primary-color);
+    background: var(--surface-color);
+}
+
+input:focus {
+    border: 1.5px solid var(--primary-color);
+    background: var(--surface-color);
+}
+
+h2 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h3 {
+    color: var(--text-secondary-color);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+a {
+    color: var(--text-tertiary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+label {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+select {
+    padding: 0.6rem 0.9rem;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s, background 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select:focus {
+    border: 1.5px solid var(--primary-color);
+    background: var(--surface-color);
+}
+
+select option {
+    background: var(--surface-color);
+    color: var(--text-color);
+}
+
+.surface-container {
+    background: var(--surface-color);
+    padding: 2.5vh 2.5vh;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    label {
+        color: var(--text-secondary-color);
+        font-size: 1rem;
+        margin-bottom: 0px;
+    }
+
+}
+.grid-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* Estiliza todas as barras de scroll */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--surface-color);
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: var(--surface-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 8px;
+    border: 2px solid var(--surface-color);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+*::-webkit-scrollbar-corner {
+    background: var(--surface-color);
+}
+
+
+.drop-child {
+    background: var(--surface-color-secondary);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.drop-child:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .surface-container {
+        padding: 1vh 1vh;
+    }
+
+    body {
+        font-size: 0.98rem;
+    }
+}
