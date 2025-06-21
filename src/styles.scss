@@ -11,7 +11,7 @@
     --accent-color: #00FFFF; // Azul/Ciano para acentos ou parte do texto
     --text-color: black; // Branco para textos principais, como "VEM QUE TEM"
     --text-secondary-color: black; // Um cinza claro para textos secundários
-    --text-tertiary-color: #FFFFFF; // Um cinza médio para textos terciários
+    --text-tertiary-color: black; // Um cinza médio para textos terciários
     --border-color: #8A2BE2; // Um roxo médio para bordas
     --sidebar-color: #1A0033; // Um roxo ainda mais escuro para a sidebar
 }
@@ -148,6 +148,22 @@ img {
     /* cursor: pointer; */
 }
 
+/* Sidebar fixo */
+app-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
 
+/* Conteúdo principal que deve se ajustar */
+.main-content {
+  margin-left: 250px; /* mesma largura do sidebar */
+  padding: 20px;
+}
 
 

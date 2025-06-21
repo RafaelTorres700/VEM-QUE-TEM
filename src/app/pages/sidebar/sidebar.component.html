@@ -1,18 +1,62 @@
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
 
 <nav class="sidebar">
   <div class="logo">Vem que Tem</div>
   <ul class="nav-list">
-    <li><i class="bi bi-house-door" routerLink="/loginpage"></i> Página inicial</li>
-    <li><i class="bi bi-search"></i> Pesquisa</li>
-    <li class="active"><i class="bi bi-compass-fill"></i> Explorar</li>
-    <li><i class="bi bi-camera-reels"></i> Reels</li>
-    <li><i class="bi bi-chat-dots"></i> Mensagens</li>
-    <li><i class="bi bi-heart"></i> Notificações</li>
-    <li><i class="bi bi-plus-square"></i> Criar</li>
-    <li><i class="bi bi-bar-chart"></i> Painel</li>
-    <li><i class="bi bi-person"></i> Perfil</li>
+
+    <li>
+      <a routerLink="/" routerLinkActive="active">
+        <i class="bi bi-house-door"></i> Página inicial
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/cardsusuarios" routerLinkActive="active">
+        <i class="bi bi-search"></i> Usuários
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/cardsestabelecimentos" routerLinkActive="active">
+        <i class="bi bi-compass-fill"></i> Estabelecimentos
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/reels" routerLinkActive="active">
+        <i class="bi bi-camera-reels"></i> Reels
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/mensagens" routerLinkActive="active">
+        <i class="bi bi-chat-dots"></i> Mensagens
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/notificacoes" routerLinkActive="active">
+        <i class="bi bi-heart"></i> Notificações
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/criarconta" routerLinkActive="active">
+        <i class="bi bi-plus-square"></i> Criar conta
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="../loginpage" routerLinkActive="active">
+        <i class="bi bi-bar-chart"></i> Login
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/perfil" routerLinkActive="active">
+        <i class="bi bi-person"></i> Perfil
+      </a>
+    </li>
+
   </ul>
 </nav>
