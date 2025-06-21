@@ -6,12 +6,13 @@ import { FooterComponent } from "./pages/footer/footer.component";
 import { CreateAcontComponent } from "./pages/create-acont/create-acont.component";
 import { CardsUsuariosComponent } from "./pages/cards-usuarios/cards-usuarios.component";
 import { CardsEstabelecimentosComponent } from "./pages/cards-estabelecimentos/cards-estabelecimentos.component";
+import { HeaderComponent } from './header/header.component';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HomeComponent, LoginPageComponent, FooterComponent, CreateAcontComponent, CardsUsuariosComponent, CardsEstabelecimentosComponent],
+  imports: [RouterOutlet, HeaderComponent, HomeComponent, LoginPageComponent, FooterComponent, CreateAcontComponent, CardsUsuariosComponent, CardsEstabelecimentosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

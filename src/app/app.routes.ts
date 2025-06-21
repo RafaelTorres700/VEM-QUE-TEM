@@ -5,6 +5,7 @@ import { CreateAcontComponent } from './pages/create-acont/create-acont.componen
 import { FooterComponent } from './pages/footer/footer.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomeComponent } from './pages/home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 export const routes: Routes = [
   {
@@ -33,7 +34,10 @@ export const routes: Routes = [
  {
         path: "footer",
         component: FooterComponent
+    },
+
+{
+        path: "header",
+        component: HeaderComponent
     }
-
-
 ];
