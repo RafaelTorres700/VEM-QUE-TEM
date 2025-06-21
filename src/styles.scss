@@ -47,16 +47,17 @@ footer {
     box-shadow: 0 2px 8px rgba(44, 44, 44, 0.12);
     padding: 3px;
     text-align: center;  /* Centraliza o texto, se desejar */
-    position: fixed; /* Fixa o elemento na tela */
+    position: relative; /* Fixa o elemento na tela */
     bottom: 0;       /* Garante que ele fique na parte inferior */
     left: 0;         /* Alinha à esquerda da tela */
     width: 100%;     /* Faz com que ocupe toda a largura da tela */
-    z-index: 1000;   /* Garante que ele fique acima de outros elementos, se necessário */
+
 }
 
 
 
 button {
+
     background: var(--primary-color);
     color: var(--background-color);
     border: 1px solid var(--border-color);
@@ -125,3 +126,28 @@ a {
     font-size: 1rem;
     transition: color 0.2s;
 }
+img {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-acesso{
+    background: var(--primary-color);
+    color: var(--background-color);
+    border: 1px solid var(--border-color);
+    padding: 0.45rem .75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.btn-acesso:hover {
+    background: var(--accent-color);
+    color: var(--surface-color);
+    /* cursor: pointer; */
+}
+
+
+
+
