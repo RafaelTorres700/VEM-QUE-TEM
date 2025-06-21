@@ -6,6 +6,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './pages/sidebar/sidebar.component';
 
 export const routes: Routes = [
   {
@@ -39,5 +40,9 @@ export const routes: Routes = [
 {
         path: "header",
         component: HeaderComponent
+    },
+    {
+        path: "sidebar",
+        component: SidebarComponent
     }
 ];
