@@ -6,17 +6,17 @@ import { FooterComponent } from "./pages/footer/footer.component";
 import { CreateAcontComponent } from "./pages/create-acont/create-acont.component";
 import { CardsUsuariosComponent } from "./pages/cards-usuarios/cards-usuarios.component";
 import { CardsEstabelecimentosComponent } from "./pages/cards-estabelecimentos/cards-estabelecimentos.component";
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './pages/header/header.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
-
+import { NgbdCarouselBasic } from './pages/carousel-basic/carousel-basic.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SidebarComponent, HeaderComponent, HomeComponent, LoginPageComponent, FooterComponent, CreateAcontComponent, CardsUsuariosComponent, CardsEstabelecimentosComponent],
+  imports: [RouterOutlet, SidebarComponent, HeaderComponent, HomeComponent, LoginPageComponent, FooterComponent, CreateAcontComponent, CardsUsuariosComponent, CardsEstabelecimentosComponent, NgbdCarouselBasic],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'vqtdozero';
+  title = 'vqtDoZero';
 }

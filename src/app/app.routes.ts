@@ -5,8 +5,9 @@ import { CreateAcontComponent } from './pages/create-acont/create-acont.componen
 import { FooterComponent } from './pages/footer/footer.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomeComponent } from './pages/home/home.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './pages/header/header.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
+import { NgbdCarouselBasic } from './pages/carousel-basic/carousel-basic.component';
 
 export const routes: Routes = [
   {
@@ -44,5 +45,9 @@ export const routes: Routes = [
     {
         path: "sidebar",
         component: SidebarComponent
+    },
+    {
+      path: "carousel",
+      component: NgbdCarouselBasic
     }
 ];

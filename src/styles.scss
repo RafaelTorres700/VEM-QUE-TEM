@@ -44,7 +44,7 @@ footer {
     background: linear-gradient(135deg, var(--sidebar-color) 70%, var(--surface-color) 100%);
     color: var(--accent-color);
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 8px rgba(44, 44, 44, 0.12);
+    box-shadow: 0 2px 8px rgba(209, 213, 216, 0.911);
     padding: 3px;
     text-align: center;  /* Centraliza o texto, se desejar */
     position: relative; /* Fixa o elemento na tela */
@@ -148,17 +148,6 @@ img {
     /* cursor: pointer; */
 }
 
-/* Sidebar fixo */
-app-sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100vh;
-  background-color: #fff;
-  z-index: 1000;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
 
 /* Conteúdo principal que deve se ajustar */
 .main-content {

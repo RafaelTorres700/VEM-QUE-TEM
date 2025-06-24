@@ -2,27 +2,30 @@
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+
 
     }
 
 
     header {
-
+      width: 100%;
+      margin-left: -100px;
+      margin-right: -100px;
       box-shadow: 0 2px 8px rgba(0,0,0,1.5);
-      background: linear-gradient(to right, #ff4081, #ff6e40);
+      background: linear-gradient(#ff4081, #ff6e40);
       color: white;
-      padding: 20px;
+      padding: 10px;
 
     }
 
     .container {
+      width: 200px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      max-width: 1200px;
-      margin: auto;
+      width: 100%;
+      margin: 0;
     }
 
     .logo {
