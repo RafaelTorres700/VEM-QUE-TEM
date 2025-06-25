@@ -40,19 +40,6 @@ body {
 }
 
 
-footer {
-    background: linear-gradient(135deg, var(--sidebar-color) 70%, var(--surface-color) 100%);
-    color: var(--accent-color);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 8px rgba(209, 213, 216, 0.911);
-    padding: 3px;
-    text-align: center;  /* Centraliza o texto, se desejar */
-    position: relative; /* Fixa o elemento na tela */
-    bottom: 0;       /* Garante que ele fique na parte inferior */
-    left: 0;         /* Alinha à esquerda da tela */
-    width: 100%;     /* Faz com que ocupe toda a largura da tela */
-
-}
 
 
 

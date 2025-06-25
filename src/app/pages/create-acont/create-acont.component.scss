@@ -1,17 +1,21 @@
-
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 78vh;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 0;
+  background: #f5f6fa;
 }
 
 form {
   background: #fff;
-  padding: 80px 60px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,1.5);
-  min-width: 200px;
+  padding: 16px 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 320px; // reduzido
+  min-width: 0;
+  margin: 80px auto 0 auto; // mais para baixo
 }
 
 fieldset {
@@ -22,17 +26,17 @@ fieldset {
 
 table {
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 td {
   vertical-align: top;
-  padding: 0 12px 12px 0;
+  padding: 0 8px 8px 0;
 }
 
 label {
   display: block;
-  margin: 12px 0 4px 0;
+  margin: 10px 0 4px 0;
   font-weight: 500;
 }
 
@@ -42,11 +46,13 @@ input[type="password"],
 input[type="date"],
 select {
   width: 100%;
-  padding: 8px;
+  height: 34px; // reduzido
+  padding: 6px;
   margin-bottom: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 0.95rem;
 }
 
 input[type="checkbox"] {
@@ -54,7 +60,7 @@ input[type="checkbox"] {
 }
 
 button {
-  padding: 8px 20px;
+  padding: 8px 18px; // reduzido
   margin-right: 8px;
   border: none;
   border-radius: 4px;
@@ -63,6 +69,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
+  font-size: 0.95rem;
 }
 
 button[type="reset"] {
@@ -78,3 +85,10 @@ button[type="reset"]:hover {
   background: #bdbdbd;
 }
 
+@media (max-width: 600px) {
+  form {
+    padding: 10px 2px;
+    max-width: 98vw;
+    margin: 40px auto 0 auto;
+  }
+}

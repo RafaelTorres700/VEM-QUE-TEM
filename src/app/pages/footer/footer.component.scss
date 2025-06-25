@@ -4,3 +4,17 @@ a {
     font-size: 1rem;
     transition: color 0.2s;
 }
+
+footer {
+     width: 100%;
+     height: 30px;
+    background: linear-gradient(135deg, var(--sidebar-color) 70%, var(--surface-color) 100%);
+    color: var(--accent-color);
+    text-align: center;      /* Centraliza o texto, se desejar */
+    position: relative; /* Fixa o elemento na tela */
+    bottom: 0px;
+    border-radius: 10px;      /* Garante que ele fique na parte inferior */
+
+  /* Faz com que ocupe toda a largura da tela */
+
+}
