@@ -59,31 +59,31 @@ input[type="checkbox"] {
   margin-right: 8px;
 }
 
-button {
-  padding: 8px 18px; // reduzido
-  margin-right: 8px;
-  border: none;
-  border-radius: 4px;
-  background: #1976d2;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-size: 0.95rem;
-}
+// button {
+//   padding: 8px 18px; // reduzido
+//   margin-right: 8px;
+//   border: none;
+//   border-radius: 4px;
+//   background: #1976d2;
+//   color: #fff;
+//   font-weight: 600;
+//   cursor: pointer;
+//   transition: background 0.2s;
+//   font-size: 0.95rem;
+// }
 
-button[type="reset"] {
-  background: #e0e0e0;
-  color: #333;
-}
+// button[type="reset"] {
+//   background: #e0e0e0;
+//   color: #333;
+// }
 
-button:hover {
-  background: #1565c0;
-}
+// button:hover {
+//   background: #1565c0;
+// }
 
-button[type="reset"]:hover {
-  background: #bdbdbd;
-}
+// button[type="reset"]:hover {
+//   background: #bdbdbd;
+// }
 
 @media (max-width: 600px) {
   form {

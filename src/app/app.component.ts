@@ -8,12 +8,12 @@ import { CardsUsuariosComponent } from "./pages/cards-usuarios/cards-usuarios.co
 import { CardsEstabelecimentosComponent } from "./pages/cards-estabelecimentos/cards-estabelecimentos.component";
 import { HeaderComponent } from './pages/header/header.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
-import { NgbdCarouselBasic } from './pages/carousel-basic/carousel-basic.component';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SidebarComponent, HeaderComponent, HomeComponent, LoginPageComponent, FooterComponent, CreateAcontComponent, CardsUsuariosComponent, CardsEstabelecimentosComponent, NgbdCarouselBasic],
+  imports: [RouterOutlet, SidebarComponent, HeaderComponent, HomeComponent, LoginPageComponent, FooterComponent, CreateAcontComponent, CardsUsuariosComponent, CardsEstabelecimentosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
