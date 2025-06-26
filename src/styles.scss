@@ -143,3 +143,112 @@ img {
 }
 
 
+/* === RESPONSIVIDADE GERAL === */
+
+/* Telas grandes > 1200px — comportamento padrão, nenhuma mudança */
+@media (max-width: 1200px) {
+  .main-content {
+    margin-left: 200px;
+    padding: 15px;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+}
+
+/* Tablets e notebooks menores */
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  button,
+  .btn-acesso,
+  input,
+  textarea {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  h2, h3 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Telas de celular (modo retrato) */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .main-content {
+    padding: 0.5rem;
+  }
+
+  button,
+  .btn-acesso,
+  input,
+  textarea {
+    font-size: 1rem;
+    padding: 0.6rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Celulares menores ou telas muito estreitas */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.5rem;
+  }
+
+  button,
+  .btn-acesso,
+  input,
+  textarea {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+  }
+
+  a {
+    font-size: 0.95rem;
+  }
+}

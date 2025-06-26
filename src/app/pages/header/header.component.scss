@@ -55,10 +55,11 @@
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
+      padding-left: 10px;
     }
 
     nav a:hover {
-      color: #ffdbe7;
+          color: var(--surface-color);
     }
 
     .btn-acesso {
