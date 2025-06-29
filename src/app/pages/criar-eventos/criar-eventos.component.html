@@ -1,0 +1,73 @@
+<p>criar-eventos works!</p>
+
+      <div class="container">
+        <form>
+          <fieldset>
+            <legend>Cadastro de Evento</legend>
+            <table>
+              <tr>
+                <td>
+                  <label for="nomeEstabelecimento">Nome do Estabelecimento:</label>
+                  <input
+                    type="text"
+                    id="nomeEstabelecimento"
+                    name="nomeEstabelecimento"
+                    placeholder="Digite o nome do estabelecimento"
+                    required
+                  />
+
+                  <label for="nomeEvento">Nome do Evento:</label>
+                  <input
+                    type="text"
+                    id="nomeEvento"
+                    name="nomeEvento"
+                    placeholder="Digite o nome do evento"
+                    required
+                  />
+                </td>
+                <td>
+                  <label for="horarioInicio">Horário Início:</label>
+                  <input
+                    type="time"
+                    id="horarioInicio"
+                    name="horarioInicio"
+                    required
+                  />
+
+                  <label for="horarioFinal">Horário Final:</label>
+                  <input
+                    type="time"
+                    id="horarioFinal"
+                    name="horarioFinal"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <label for="enderecoCompleto">Endereço Completo:</label>
+                  <input
+                    type="text"
+                    id="enderecoCompleto"
+                    name="enderecoCompleto"
+                    placeholder="Digite o endereço completo"
+                    required
+                    style="width: 100%;"
+                  />
+                </td>
+              </tr>
+            </table>
+            <label for="confirmacaoSeguranca" style="display: block; margin-top: 15px;">
+              <input
+                type="checkbox"
+                id="confirmacaoSeguranca"
+                name="confirmacaoSeguranca"
+                required
+              />
+              Confirmo que sou o responsável pelo evento e estou ciente da obrigatoriedade de possuir segurança interna no local.
+            </label>
+            <button type="submit">Cadastrar Evento</button>
+            <button type="reset">Limpar</button>
+          </fieldset>
+        </form>
+      </div>
