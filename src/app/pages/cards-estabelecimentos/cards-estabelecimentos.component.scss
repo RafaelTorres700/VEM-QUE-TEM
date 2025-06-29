@@ -1,0 +1,78 @@
+.carouselExample {
+  padding-top: 500px;
+   width: 150px;
+  height: 60vh;
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+
+}
+
+.carousel-item{
+  margin-top: 50px;
+  transition: transform 0.5s ease;
+}
+
+
+button {
+  width: 100px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  margin: center;
+  margin-top: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,1.5);
+
+}
+
+
+  h5{
+    text-align: center;
+  }
+  h5:hover {
+          color: var(--accent-color);
+    }
+
+  p{
+    text-align: center;
+  }
+   h1{margin-top: 100px;
+    color: black;
+    text-align: center;
+  }
+
+  .buttonReservar{
+   width: 100px;
+  height: 40px;
+  margin-bottom: 20px;
+
+
+  }
+
+
+  .list-unstyled-mb-3 {
+    display: flex;
+    flex-direction: column;
+    padding-left: 200px;
+    text-align: center;
+
+
+    li {
+      width: 100%;
+      text-align: left;
+      margin: 0 auto;
+      text-decoration: none;
+    }
+  }
+
