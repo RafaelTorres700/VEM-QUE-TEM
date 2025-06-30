@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { HomeComponent } from "./pages/home/home.component";
-import { LoginPageComponent } from "./pages/login-page/login-page.component";
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { FooterComponent } from "../layout/footer/footer.component";
 import { CreateAcontComponent } from "./pages/create-acont/create-acont.component";
 import { CardsUsuariosComponent } from "./pages/cards-usuarios/cards-usuarios.component";
@@ -10,11 +13,13 @@ import { HeaderComponent } from '../layout/header/header.component';
 import { SidebarComponent } from '../layout/sidebar/sidebar.component';
 import { CriarEventosComponent } from "./pages/criar-eventos/criar-eventos.component";
 
-
-
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    HttpClientModule,
+    ReactiveFormsModule,
     SidebarComponent,
     HeaderComponent,
     HomeComponent,
@@ -23,9 +28,10 @@ import { CriarEventosComponent } from "./pages/criar-eventos/criar-eventos.compo
     CreateAcontComponent,
     CardsUsuariosComponent,
     CardsEstabelecimentosComponent,
-    CriarEventosComponent],
+    CriarEventosComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'vqtDoZero';
