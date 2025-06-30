@@ -7,7 +7,6 @@ form {
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   margin: 100px auto 0 auto; // centralizado e menos espaço acima
-
   display: flex;
   flex-direction: column;
   gap: 20px; // espaçamento entre os itens
@@ -22,9 +21,11 @@ form {
   }
 
   label {
+    padding-left:  190px;
     margin-bottom: 6px;
     font-weight: 500;
-    display: block;
+    display: flex;
+    text-decoration: left;
   }
 
   .form-group {
