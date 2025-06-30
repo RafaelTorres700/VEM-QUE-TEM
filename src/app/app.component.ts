@@ -8,12 +8,22 @@ import { CardsUsuariosComponent } from "./pages/cards-usuarios/cards-usuarios.co
 import { CardsEstabelecimentosComponent } from "./pages/cards-estabelecimentos/cards-estabelecimentos.component";
 import { HeaderComponent } from '../layout/header/header.component';
 import { SidebarComponent } from '../layout/sidebar/sidebar.component';
+import { CriarEventosComponent } from "./pages/criar-eventos/criar-eventos.component";
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SidebarComponent, HeaderComponent, HomeComponent, LoginPageComponent, FooterComponent, CreateAcontComponent, CardsUsuariosComponent, CardsEstabelecimentosComponent],
+  imports: [RouterOutlet,
+    SidebarComponent,
+    HeaderComponent,
+    HomeComponent,
+    LoginPageComponent,
+    FooterComponent,
+    CreateAcontComponent,
+    CardsUsuariosComponent,
+    CardsEstabelecimentosComponent,
+    CriarEventosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
