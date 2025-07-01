@@ -1,4 +1,4 @@
-<div class="login-container">
+<!-- <div class="login-container">
   <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="login-form">
     <h2>Login</h2>
 
@@ -16,6 +16,26 @@
 
     <div class="register-link">
       <span>Não tem uma conta? </span>
+      <a routerLink="/criarconta">Cadastre-se</a>
+    </div>
+  </form>
+</div> -->
+
+
+<div class="form-section">
+  <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" autocomplete="on">
+    <h2>Login</h2>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" formControlName="email" autocomplete="username" required />
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" formControlName="senha" autocomplete="current-password" required />
+    </div>
+    <button type="submit" [disabled]="formLogin.invalid">Entrar</button>
+    <div class="register-link">
+      Não tem uma conta?
       <a routerLink="/criarconta">Cadastre-se</a>
     </div>
   </form>

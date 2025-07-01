@@ -1,0 +1,75 @@
+<p>create-estabelecimento works!</p>
+
+<div class="form-section">
+  <form (ngSubmit)="onSubmitEstabelecimento()">
+    <h2>Cadastro de Estabelecimento</h2>
+
+    <div class="form-group">
+      <label for="nome_estabelecimento">Nome do Estabelecimento</label>
+      <input id="nome_estabelecimento" formControlName="nome_estabelecimento" required />
+    </div>
+
+    <div class="form-group">
+      <label for="cnpj">CNPJ</label>
+      <input id="cnpj" formControlName="cnpj" required />
+    </div>
+
+    <div class="form-group">
+      <label for="endereco">Endereço</label>
+      <input id="endereco" formControlName="endereco" required />
+    </div>
+
+    <div class="form-group">
+      <label for="complemento">Complemento</label>
+      <input id="complemento" formControlName="complemento" />
+    </div>
+
+    <div class="form-row" style="display:flex; gap:18px;">
+      <div class="campo-group">
+        <label for="cidade">Cidade</label>
+        <input id="cidade" formControlName="cidade" required />
+      </div>
+      <div class="campo-group">
+        <label for="estado">Estado</label>
+        <select id="estado" formControlName="estado" required>
+          <option value="">Selecione</option>
+          <!-- ...opções dos estados brasileiros... -->
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nome_responsavel">Nome do Responsável</label>
+      <input id="nome_responsavel" formControlName="nome_responsavel" required />
+    </div>
+
+    <div class="form-row" style="display:flex; gap:18px;">
+      <div class="campo-group">
+        <label for="telefone">Telefone</label>
+        <input id="telefone" formControlName="telefone" required />
+      </div>
+      <div class="campo-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" formControlName="email" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" formControlName="senha" required />
+    </div>
+
+    <div class="form-group">
+      <label>Fotos do Estabelecimento (até 5)</label>
+      <input type="file" accept="image/*" multiple (change)="onFileChange($event)" />
+    </div>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="termos_estab" required />
+      <label for="termos_estab">Confirmo que as informações são verdadeiras</label>
+    </div>
+
+    <button type="submit" [disabled]="formEstabelecimento.invalid">Cadastrar</button>
+    <button type="reset" class="secondary">Limpar</button>
+  </form>
+</div>

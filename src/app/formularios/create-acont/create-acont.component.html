@@ -1,10 +1,10 @@
-
+<!--
 
       <div class="container">
         <form>
           <fieldset>
             <table>
-              <!-- primeira linha -->
+
               <tr>
                 <td>
                   <label for="nome">Nome completo:</label>
@@ -15,10 +15,10 @@
                     placeholder="Digite o nome"
                     required
                   />
-                  <!-- campo e-mail -->
+
                   <label for="email">E-mail:</label>
                   <input type="email" id="email" name="email" placeholder="Digite o e-mail"required />
-                  <!-- senha -->
+
                   <label for="senha">Senha:</label>
                   <input type="password" id="senha" name="senha" placeholder="Digite sua Senha" required/>
                 </td>
@@ -27,8 +27,7 @@
                   <label for="nascimento">Data de nascimento:</label>
                   <input type="date" id="nascimento" name="nascimento" />
 
-                  <!-- lista suspensa (select) -->
-                  <!-- permite escolher  -->
+
                   <label for="estado">Estado</label>
                   <select name="estado" id="estado">
                     <option value="">Selecione</option>
@@ -68,12 +67,51 @@
               <input type="checkbox" name="termos" required />
               Aceito os termos e condições
             </label>
-            <!-- botão enviar -->
+
             <button type="submit">Enviar</button>
-            <!-- botão para resetar -->
+
             <button type="reset">Limpar</button>
           </fieldset>
         </form>
       </div>
 
+ -->
 
+ <div class="form-section">
+  <form>
+    <h2>Cadastro de Usuário</h2>
+    <div class="form-row">
+      <div class="campo-group">
+        <label for="nome">Nome completo</label>
+        <input id="nome" name="nome" required />
+      </div>
+      <div class="campo-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="campo-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required />
+      </div>
+    </div>
+    <div class="form-row" style="display:flex; gap:18px;">
+      <div class="campo-group">
+        <label for="nascimento">Data de nascimento</label>
+        <input type="date" id="nascimento" name="nascimento" />
+      </div>
+      <div class="campo-group">
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado">
+          <option value="">Selecione</option>
+          <!-- ...opções dos estados... -->
+        </select>
+      </div>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="termos" name="termos" required />
+      <label for="termos">Aceito os termos e condições</label>
+    </div>
+    <button type="submit">Enviar</button>
+    <button type="reset" class="secondary">Limpar</button>
+  </form>
+</div>
