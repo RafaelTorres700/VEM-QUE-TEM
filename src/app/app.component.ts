@@ -12,6 +12,7 @@ import { CardsEstabelecimentosComponent } from "./pages/cards-estabelecimentos/c
 import { HeaderComponent } from '../layout/header/header.component';
 import { SidebarComponent } from '../layout/sidebar/sidebar.component';
 import { CriarEventosComponent } from "./formularios/criar-eventos/criar-eventos.component";
+import { CreateEstabelecimentoComponent } from "./formularios/create-estabelecimento/create-estabelecimento.component";
 
 @Component({
   selector: 'app-root',
@@ -28,8 +29,10 @@ import { CriarEventosComponent } from "./formularios/criar-eventos/criar-eventos
     CreateAcontComponent,
     CardsUsuariosComponent,
     CardsEstabelecimentosComponent,
-    CriarEventosComponent
-  ],
+    CriarEventosComponent,
+    CreateEstabelecimentoComponent
+
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

@@ -8,6 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from '../layout/header/header.component';
 import { SidebarComponent } from '../layout/sidebar/sidebar.component';
 import { CriarEventosComponent } from './formularios/criar-eventos/criar-eventos.component';
+import { CreateEstabelecimentoComponent } from './formularios/create-estabelecimento/create-estabelecimento.component';
+
 
 export const routes: Routes = [
     {
@@ -51,6 +53,11 @@ export const routes: Routes = [
     {
         path: "criar-evento",
         component: CriarEventosComponent
+    },
+    {
+        path: "criar-estabelecimento",
+        component: CreateEstabelecimentoComponent
     }
+
 
 ];
