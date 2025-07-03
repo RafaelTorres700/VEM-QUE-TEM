@@ -3,16 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from "./pages/home/home.component";
-import { LoginPageComponent } from './formularios/login-page/login-page.component';
 import { FooterComponent } from "../layout/footer/footer.component";
-import { CreateAcontComponent } from "./formularios/create-acont/create-acont.component";
-import { CardsUsuariosComponent } from "./pages/cards-usuarios/cards-usuarios.component";
-import { CardsEstabelecimentosComponent } from "./pages/cards-estabelecimentos/cards-estabelecimentos.component";
 import { HeaderComponent } from '../layout/header/header.component';
 import { SidebarComponent } from '../layout/sidebar/sidebar.component';
-import { CriarEventosComponent } from "./formularios/criar-eventos/criar-eventos.component";
-import { CreateEstabelecimentoComponent } from "./formularios/create-estabelecimento/create-estabelecimento.component";
+// import { EventDatingComponent } from './event-dating.component';
+
+  // template: '<app-event-dating></app-event-dating>'
+
 
 @Component({
   selector: 'app-root',
@@ -24,14 +21,9 @@ import { CreateEstabelecimentoComponent } from "./formularios/create-estabelecim
     ReactiveFormsModule,
     SidebarComponent,
     HeaderComponent,
-    HomeComponent,
-    LoginPageComponent,
     FooterComponent,
-    CreateAcontComponent,
-    CardsUsuariosComponent,
-    CardsEstabelecimentosComponent,
-    CriarEventosComponent,
-    CreateEstabelecimentoComponent
+    // EventDatingComponent
+
 
   ],
   templateUrl: './app.component.html',
