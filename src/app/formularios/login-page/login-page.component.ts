@@ -14,6 +14,9 @@ import { AuthService } from '../../services/auth.service';
 export class LoginPageComponent {
   formLogin: FormGroup;
 
+
+
+
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.formLogin = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -36,4 +39,7 @@ export class LoginPageComponent {
       });
     }
   }
+
+
+
 }

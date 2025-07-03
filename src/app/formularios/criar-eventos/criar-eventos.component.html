@@ -1,125 +1,73 @@
-<!--
+<div class="form-container">
+        <div class="header">
+            <h2><span class="event-icon">🎉</span>Cadastro de Evento</h2>
+            <p>Preencha os dados do seu evento com atenção</p>
+        </div>
 
-<div class="container">
-  <form>
-    <fieldset>
-      <legend>Cadastro de Evento</legend>
-      <table>
-        <tr>
-          <td>
-            <label for="nomeEstabelecimento">Nome do Estabelecimento:</label>
-            <input
-              type="text"
-              id="nomeEstabelecimento"
-              name="nomeEstabelecimento"
-              placeholder="Digite o nome do estabelecimento"
-              required
-            />
+        <div class="success-message" id="successMessage">
+            ✅ Evento cadastrado com sucesso!
+        </div>
 
-            <label for="nomeEvento">Nome do Evento:</label>
-            <input
-              type="text"
-              id="nomeEvento"
-              name="nomeEvento"
-              placeholder="Digite o nome do evento"
-              required
-            />
+        <form id="eventForm">
+            <div class="form-row">
+                <div class="campo-group">
+                    <label for="nomeEstabelecimento">Nome do Estabelecimento <span class="required">*</span></label>
+                    <input type="text" id="nomeEstabelecimento" name="nomeEstabelecimento" required />
+                    <div class="error-message" id="errorNomeEstabelecimento">Campo obrigatório</div>
+                </div>
+                <div class="campo-group">
+                    <label for="nomeEvento">Nome do Evento <span class="required">*</span></label>
+                    <input type="text" id="nomeEvento" name="nomeEvento" required />
+                    <div class="error-message" id="errorNomeEvento">Campo obrigatório</div>
+                </div>
+            </div>
 
-             Novo campo para cortesia
-            <label for="cortesia">Cortesia:</label>
-            <input
-              type="text"
-              id="cortesia"
-              name="cortesia"
-              placeholder="Digite o nome da cortesia"
-            />
-          </td>
-          <td>
-            <label for="horarioInicio">Horário Início:</label>
-            <input
-              type="time"
-              id="horarioInicio"
-              name="horarioInicio"
-              required
-            />
+            <div class="form-row">
+                <div class="campo-group">
+                    <label for="cortesia">Cortesia</label>
+                    <input type="text" id="cortesia" name="cortesia" placeholder="Ex: Open bar, entrada gratuita..." />
+                </div>
+            </div>
 
-            <label for="horarioFinal">Horário Final:</label>
-            <input
-              type="time"
-              id="horarioFinal"
-              name="horarioFinal"
-              required
-            />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <label for="enderecoCompleto">Endereço Completo:</label>
-            <input
-              type="text"
-              id="enderecoCompleto"
-              name="enderecoCompleto"
-              placeholder="Digite o endereço completo"
-              required
-              style="width: 100%;"
-            />
-          </td>
-        </tr>
-      </table>
-      <label for="confirmacaoSeguranca" style="display: block; margin-top: 15px;">
-        <input
-          type="checkbox"
-          id="confirmacaoSeguranca"
-          name="confirmacaoSeguranca"
-          required
-        />
-        Confirmo que sou o responsável pelo evento e estou ciente da obrigatoriedade de possuir segurança interna no local.
-      </label>
-      <button >Cadastrar Evento</button>
-      <button >Limpar</button>
-    </fieldset>
-  </form>
-</div> -->
+            <div class="form-row">
+                <div class="campo-group">
+                    <label for="horarioInicio">Horário Início <span class="required">*</span></label>
+                    <input type="time" id="horarioInicio" name="horarioInicio" required />
+                    <div class="error-message" id="errorHorarioInicio">Campo obrigatório</div>
+                </div>
+                <div class="campo-group">
+                    <label for="horarioFinal">Horário Final <span class="required">*</span></label>
+                    <input type="time" id="horarioFinal" name="horarioFinal" required />
+                    <div class="error-message" id="errorHorarioFinal">Campo obrigatório</div>
+                </div>
+            </div>
 
+            <div class="time-info" id="timeInfo" style="display: none;">
+                <strong>Duração do evento:</strong> <span id="eventDuration"></span>
+            </div>
 
-<div class="form-section">
-  <form>
-    <h2>Cadastro de Evento</h2>
-    <div class="form-row">
-      <div class="campo-group">
-        <label for="nomeEstabelecimento">Nome do Estabelecimento</label>
-        <input id="nomeEstabelecimento" name="nomeEstabelecimento" required />
-      </div>
-      <div class="campo-group">
-        <label for="nomeEvento">Nome do Evento</label>
-        <input id="nomeEvento" name="nomeEvento" required />
-      </div>
-      <div class="campo-group">
-        <label for="cortesia">Cortesia</label>
-        <input id="cortesia" name="cortesia" />
-      </div>
+            <div class="form-group">
+                <label for="enderecoCompleto">Endereço Completo <span class="required">*</span></label>
+                <input type="text" id="enderecoCompleto" name="enderecoCompleto" placeholder="Rua, número, bairro, cidade - CEP" required />
+                <div class="error-message" id="errorEnderecoCompleto">Campo obrigatório</div>
+            </div>
+
+            <div class="security-notice">
+                <h4>⚠️ Aviso de Segurança</h4>
+                <p>É obrigatória a presença de segurança interna no evento. Certifique-se de que todas as medidas de segurança necessárias estejam implementadas.</p>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="confirmacaoSeguranca" name="confirmacaoSeguranca" required />
+                <label for="confirmacaoSeguranca">
+                    Confirmo que sou o responsável pelo evento e estou ciente da obrigatoriedade de possuir segurança interna no local.
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">🎯 Cadastrar Evento</button>
+                <button type="reset" class="secondary">🔄 Limpar</button>
+            </div>
+        </form>
     </div>
-    <div class="form-row" style="display:flex; gap:18px;">
-      <div class="campo-group">
-        <label for="horarioInicio">Horário Início</label>
-        <input type="time" id="horarioInicio" name="horarioInicio" required />
-      </div>
-      <div class="campo-group">
-        <label for="horarioFinal">Horário Final</label>
-        <input type="time" id="horarioFinal" name="horarioFinal" required />
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="enderecoCompleto">Endereço Completo</label>
-      <input id="enderecoCompleto" name="enderecoCompleto" required />
-    </div>
-    <div class="checkbox-row">
-      <input type="checkbox" id="confirmacaoSeguranca" name="confirmacaoSeguranca" required />
-      <label for="confirmacaoSeguranca">
-        Confirmo que sou o responsável pelo evento e estou ciente da obrigatoriedade de possuir segurança interna no local.
-      </label>
-    </div>
-    <button type="submit">Cadastrar Evento</button>
-    <button type="reset" class="secondary">Limpar</button>
-  </form>
-</div>
+<script src="../criar-eventos/criar-event.js"></script>
