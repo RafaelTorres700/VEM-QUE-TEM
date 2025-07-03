@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-estabelecimento',
+  standalone: true,                         // Adicione!
+  imports: [CommonModule, ReactiveFormsModule], // Adicione!
   templateUrl: './create-estabelecimento.component.html',
-  styleUrls: ['./create-estabelecimento.component.scss'] // Corrigido para styleUrls
+  styleUrls: ['./create-estabelecimento.component.scss']
 })
 export class CreateEstabelecimentoComponent {
   formEstabelecimento: FormGroup;
@@ -43,7 +46,7 @@ export class CreateEstabelecimentoComponent {
     const files: FileList = event.target.files;
     // Permitir até 5 arquivos
     for (let i = 0; i < Math.min(files.length, 5); i++) {
-      this.formEstabelecimento.patchValue({ [`foto${i+1}`]: files[i] });
+      this.formEstabelecimento.patchValue({ [`foto${i + 1}`]: files[i] });
     }
     // Se quiser preview, manipule aqui também
   }

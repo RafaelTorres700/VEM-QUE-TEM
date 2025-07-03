@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
@@ -8,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
-  imports: [ReactiveFormsModule, HttpClientModule], // ✅ Importação obrigatória
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule], // ✅ Importação obrigatória
   providers: [AuthService]
 })
 export class LoginPageComponent {

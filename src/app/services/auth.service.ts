@@ -22,7 +22,7 @@ export class AuthService {
   private apiUrl = 'http://localhost:3000/auth'; // ajuste conforme IP/porta backend
 
   // Injeta o HttpClient no construtor para usar nas requisições
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Método para fazer login - envia email e senha para o backend e recebe um token
   login(credenciais: { email: string; senha: string }): Observable<LoginResponse> {

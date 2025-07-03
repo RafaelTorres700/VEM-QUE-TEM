@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cards-estabelecimentos',
-  imports: [],
+  standalone: true,                           // ATIVAR STANDALONE!
+  imports: [CommonModule],                    // OBRIGATÓRIO!
   templateUrl: './cards-estabelecimentos.component.html',
-  styleUrl: './cards-estabelecimentos.component.scss'
+  styleUrls: ['./cards-estabelecimentos.component.scss'] // CORRETO!
 })
-export class CardsEstabelecimentosComponent {
-
-}
+export class CardsEstabelecimentosComponent { }

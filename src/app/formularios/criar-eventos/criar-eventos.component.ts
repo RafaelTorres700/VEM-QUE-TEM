@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-criar-eventos',
-  imports: [],
+  standalone: true,                             // Obrigatório
+  imports: [CommonModule],                      // Obrigatório
   templateUrl: './criar-eventos.component.html',
-  styleUrl: './criar-eventos.component.scss'
+  styleUrls: ['./criar-eventos.component.scss'] // Corrigido!
 })
-export class CriarEventosComponent {
-
-}
+export class CriarEventosComponent { }

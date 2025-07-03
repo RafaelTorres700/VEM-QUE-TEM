@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { HomeComponent } from "./pages/home/home.component";
 import { LoginPageComponent } from './formularios/login-page/login-page.component';
 import { FooterComponent } from "../layout/footer/footer.component";
@@ -19,6 +19,7 @@ import { CreateEstabelecimentoComponent } from "./formularios/create-estabelecim
   standalone: true,
   imports: [
     RouterOutlet,
+    CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
     SidebarComponent,
@@ -32,7 +33,7 @@ import { CreateEstabelecimentoComponent } from "./formularios/create-estabelecim
     CriarEventosComponent,
     CreateEstabelecimentoComponent
 
-],
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
