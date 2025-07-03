@@ -1,30 +1,83 @@
-<div class="form-section">
-  <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" autocomplete="on">
-    <h2>Login</h2>
+<div class="form-container">
+  <div class="header">
+    <h2><span class="login-icon">🔐</span>Login</h2>
+    <p>Acesse sua conta para continuar</p>
+  </div>
+
+  <div class="success-message" id="successMessage">
+    ✅ Login realizado com sucesso!
+  </div>
+
+  <div class="error-message" id="errorMessage">
+    ❌ Erro ao fazer login. Verifique suas credenciais.
+  </div>
+
+  <form id="loginForm" autocomplete="on">
     <div class="form-group">
-      <label for="email">E-mail</label>
+      <label for="email">E-mail <span class="required">*</span></label>
       <input
         type="email"
         id="email"
-        formControlName="email"
+        name="email"
         autocomplete="username"
+        placeholder="seu@email.com"
         required
       />
+      <div class="field-error" id="emailError">E-mail inválido</div>
     </div>
+
     <div class="form-group">
-      <label for="senha">Senha</label>
-      <input
-        type="password"
-        id="senha"
-        formControlName="senha"
-        autocomplete="current-password"
-        required
-      />
+      <label for="senha">Senha <span class="required">*</span></label>
+      <div class="password-input-container">
+        <input
+          type="password"
+          id="senha"
+          name="senha"
+          autocomplete="current-password"
+          placeholder="Digite sua senha"
+          required
+        />
+        <button type="button" class="password-toggle" id="togglePassword">
+          👁️
+        </button>
+      </div>
+      <div class="field-error" id="senhaError">Senha é obrigatória</div>
     </div>
-    <button type="submit" [disabled]="formLogin.invalid">Entrar</button>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="lembrarLogin" name="lembrarLogin" />
+      <label for="lembrarLogin"> Lembrar-me neste dispositivo </label>
+    </div>
+
+    <div class="forgot-password">
+      <a href="#" id="forgotPassword">Esqueceu sua senha?</a>
+    </div>
+
+    <button type="submit" id="submitBtn">
+      <span class="loading" id="loadingSpinner"></span>
+      <span id="submitText">🚀 Entrar</span>
+    </button>
+
+    <div class="divider">
+      <span>ou</span>
+    </div>
+
+    <div class="social-login">
+      <button type="button" class="social-btn google-btn" id="googleLogin">
+        🔍 Google
+      </button>
+      <button type="button" class="social-btn" id="facebookLogin">
+        📘 Facebook
+      </button>
+    </div>
+
     <div class="register-link">
       Não tem uma conta?
-      <a routerLink="/criarconta">Cadastre-se</a>
+      <a href="/criarconta" id="registerLink"
+        >Cadastre-se</a
+      >
     </div>
   </form>
 </div>
+
+<script src="../login-page/login-pages.ts"></script>
