@@ -1,31 +1,35 @@
-<!-- carrossel de usuários -->
+<div class="user-card" *ngIf="user">
+  <div class="user-photo">
+    <img [src]="user.fotoUrl" [alt]="user.nome" />
+  </div>
 
-<div id="carouselExample" >
-  <h1>Usuários cadastrados</h1>
+  <div class="user-info">
+    <h3 class="user-name">{{ user.nome }}</h3>
 
-
-    <div class="carousel-item">
-      <img src="assets/mulher2.jpeg" class="d-block w-100" alt="..." />
-      <div>
-        <h5>
-          Camila Nunes
-        </h5>
-        <p class="card-text">
-          💬 Bio: Sexta é dia de sair. Gosta de funk e vinho? Me chama!
-        </p>
-        <ul class="list-unstyled-mb-3">
-          <li>👤 28 anos</li>
-          <li>📍 Solteira</li>
-          <li>🎯 Interesses: Música, eventos, pets</li>
-          <li>📅 Disponível: Finais de semana</li>
-          <li>📍 Distância: 3km de você </li>
-          <li href="#" class="btn btn-success w-100">💌 Enviar convite</li>
-        <li class="text-mutedd-block-mt-2">✅ Verificado • 56 curtidas</li>
-        </ul>
-
-
-      </div>
-       <button class="buttonConvidar">Convidar</button>
-
+    <div class="user-details">
+      <span *ngIf="user.genero" class="user-gender">
+        <i class="gender-icon">👤</i>
+        {{ user.genero }}
+      </span>
+      <span *ngIf="calcularIdade()" class="user-age">
+        <i class="age-icon">🎂</i>
+        {{ calcularIdade() }} anos
+      </span>
+      <span *ngIf="user.localizacao" class="user-location">
+        <i class="location-icon">📍</i>
+        {{ user.localizacao }}
+      </span>
     </div>
+
+    <p *ngIf="user.miniBio" class="user-bio">{{ user.miniBio }}</p>
+  </div>
+
+  <div class="user-actions">
+    <button class="btn-curtir" (click)="onCurtir()">
+      ❤️ Curtir
+    </button>
+    <button class="btn-convidar" (click)="onConvidar()">
+      📩 Convidar
+    </button>
+  </div>
 </div>
