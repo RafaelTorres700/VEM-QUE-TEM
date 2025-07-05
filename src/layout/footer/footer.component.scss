@@ -1,20 +1,306 @@
+/* ===== FOOTER PRINCIPAL - VEM QUE TEM ===== */
+
+/* Links base para footer */
 a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.2s;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
+a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+a:focus {
+  outline: 2px solid #fef3c7;
+  outline-offset: 2px;
+}
+
+/* ===== FOOTER PRINCIPAL ===== */
 footer {
-     width: 100%;
-     height: 60px;
-    background: linear-gradient(180deg, #7f53ac 0%, #b389fa 100%);
-    color: var(--accent-color);
-    text-align: center;      /* Centraliza o texto, se desejar */
-    position: relative; /* Fixa o elemento na tela */
-    bottom: 0px;
-    border-radius: 10px;      /* Garante que ele fique na parte inferior */
-
-  /* Faz com que ocupe toda a largura da tela */
+  width: 100%;
+  min-height: 80px;
+  background: linear-gradient(135deg, #6b46c1 0%, #8b5cf6 50%, #a78bfa 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  border-radius: 0;
+  box-shadow:
+    0 -8px 32px -8px rgba(107, 70, 193, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  padding: 24px 32px;
+  margin-top: auto;
+  backdrop-filter: blur(10px);
 }
 
+/* Container do conteúdo do footer */
+.footer-content {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+/* Seção principal do footer */
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+/* Logo/Marca no footer */
+.footer-brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
+}
+
+/* Navegação do footer */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
+}
+
+.footer-nav a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.footer-nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Seção de informações do footer */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+/* Texto de copyright */
+.footer-copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Redes sociais */
+.footer-social {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.footer-social a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Divider decorativo */
+.footer-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 1px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  footer {
+    padding: 20px 24px;
+  }
+
+  .footer-main {
+    gap: 24px;
+  }
+
+  .footer-nav {
+    gap: 20px;
+  }
+}
+
+/* Tablets pequenos */
+@media (max-width: 768px) {
+  footer {
+    min-height: 120px;
+    padding: 16px 20px;
+  }
+
+  .footer-content {
+    gap: 20px;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-size: 1.1rem;
+  }
+
+  .footer-nav {
+    gap: 16px;
+  }
+
+  .footer-nav a {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .footer-social {
+    gap: 12px;
+  }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  footer {
+    min-height: 140px;
+    padding: 12px 16px;
+  }
+
+  .footer-content {
+    gap: 16px;
+  }
+
+  .footer-main {
+    gap: 16px;
+  }
+
+  .footer-brand {
+    font-size: 1rem;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .footer-nav a {
+    width: 100%;
+    text-align: center;
+    padding: 8px 12px;
+  }
+
+  .footer-social {
+    gap: 10px;
+  }
+
+  .footer-social a {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+/* ===== VARIAÇÕES DE ESTILO ===== */
+
+/* Footer compacto (classe adicional) */
+.footer-compact {
+  min-height: 60px;
+  padding: 16px 32px;
+}
+
+.footer-compact .footer-content {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-compact .footer-info {
+  border-top: none;
+  padding-top: 0;
+  flex-direction: row;
+  width: auto;
+}
+
+/* Footer com fundo sólido (classe adicional) */
+.footer-solid {
+  background: #6b46c1;
+  box-shadow: 0 -4px 16px rgba(107, 70, 193, 0.2);
+}
+
+/* ===== MELHORIAS DE ACESSIBILIDADE ===== */
+.footer-nav a:focus,
+.footer-social a:focus {
+  outline: 2px solid #fef3c7;
+  outline-offset: 2px;
+}
+
+/* Redução de movimento para usuários sensíveis */
+@media (prefers-reduced-motion: reduce) {
+  footer a {
+    transition: none !important;
+  }
+}
+
+/* ===== UTILITÁRIOS ===== */
+.footer-text-muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-text-small {
+  font-size: 0.75rem;
+}
+
+.footer-mb-0 {
+  margin-bottom: 0;
+}

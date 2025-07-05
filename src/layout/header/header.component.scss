@@ -1,94 +1,257 @@
+/* ===== HEADER PRINCIPAL - VEM QUE TEM ===== */
+
+/* Reset específico do header */
 * {
   margin: 0;
   padding: 0;
-
-
+  box-sizing: border-box;
 }
 
+/* Configuração da imagem de perfil */
 img {
-  width: 80px;
-  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
 }
 
+img:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* ===== HEADER PRINCIPAL ===== */
 header {
-  width: 97%;
-  height: 76px;
-  margin-right: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(180deg, #7f53ac 0%, #b389fa 100%);
-
-  color: var(--accent-color);
-  padding: 10px;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #6b46c1 0%, #8b5cf6 50%, #a78bfa 100%);
+  box-shadow:
+    0 8px 32px -8px rgba(107, 70, 193, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  padding: 0 32px;
   position: fixed;
-  box-sizing: 50px;
-  z-index: 100;
-
-
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+/* Container principal do header */
 .container {
-  width: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   width: 100%;
-  margin: 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
+/* ===== SEÇÃO DA LOGO ===== */
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .slogan {
-  font-size: 0.9rem;
-  margin-top: 5px;
-
-  color: #fff8f8;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.5px;
 }
 
+/* ===== NAVEGAÇÃO PRINCIPAL ===== */
 nav {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
 }
 
 nav a {
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
-  padding-left: 10px;
-}
-
-nav a:hover {
-  color: var(--surface-color);
-}
-
-.btn-acesso {
-  background: white;
-  color: #ff4081;
+  font-size: 0.95rem;
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+nav a:hover::before {
+  left: 100%;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  backdrop-filter: blur(8px);
+}
+
+nav a:active {
+  transform: translateY(0);
+}
+
+/* ===== BOTÃO DE ACESSO ===== */
+.btn-acesso {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: #6b46c1;
+  padding: 10px 24px;
+  border-radius: 25px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 4px 12px rgba(255, 255, 255, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-acesso:hover {
-  background: #ffdbe7;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 20px rgba(255, 255, 255, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
+.btn-acesso:active {
+  transform: translateY(0);
+}
+
+/* ===== BOTÕES GERAIS ===== */
+button {
+  height: 44px;
+  min-width: 120px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  header {
+    padding: 0 24px;
   }
 
   nav {
-    margin-top: 15px;
+    gap: 24px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+}
+
+/* Tablets pequenos */
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 0 16px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 0;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .slogan {
+    font-size: 0.75rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .btn-acesso {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  header {
+    height: 60px;
+    padding: 0 12px;
+  }
+
+  .container {
+    gap: 12px;
+    padding: 8px 0;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .slogan {
+    display: none; /* Esconde o slogan em telas muito pequenas */
+  }
+
+  nav {
+    gap: 12px;
     flex-direction: column;
     width: 100%;
   }
@@ -96,12 +259,41 @@ nav a:hover {
   nav a,
   .btn-acesso {
     width: 100%;
-    padding: 10px 0;
     text-align: center;
+    padding: 8px 12px;
+  }
+
+  button {
+    height: 40px;
+    min-width: 100px;
+    font-size: 0.85rem;
+  }
+
+  img {
+    width: 36px;
+    height: 36px;
   }
 }
 
-button {
-  height: 40px;
-  width: 100px;
+/* ===== MELHORIAS DE ACESSIBILIDADE ===== */
+nav a:focus,
+.btn-acesso:focus,
+button:focus {
+  outline: 2px solid #fef3c7;
+  outline-offset: 2px;
+}
+
+/* Redução de movimento para usuários sensíveis */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ===== INDICADORES DE ESTADO ===== */
+.nav-active {
+  color: #fef3c7 !important;
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
 }
