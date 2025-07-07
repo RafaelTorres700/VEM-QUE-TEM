@@ -14,7 +14,7 @@ export class CardsEstabelecimentosComponent {
 
 <span
   class="star"
-  *ngFor="let star of getStarsArray(establishment.rating); let i = index"
-  [class.filled]="i < mathFloor(establishment.rating)"
-  [class.half]="i === mathFloor(establishment.rating) && mathMod(establishment.rating, 1) !== 0"
->
+  * ngFor="let star of getStarsArray(establishment.rating); let i = index"
+  [class.filled] = "i < mathFloor(establishment.rating)"
+  [class.half] = "i === mathFloor(establishment.rating) && mathMod(establishment.rating, 1) !== 0"
+    >
