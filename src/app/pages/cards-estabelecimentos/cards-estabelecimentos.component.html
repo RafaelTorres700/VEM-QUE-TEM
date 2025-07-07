@@ -1,29 +1,143 @@
+<!-- cards-usuarios.component.html -->
+<div class="establishment-card" [class.liked]="isLiked">
+  <!-- Badge de destaque -->
+  <div class="highlight-badge" *ngIf="establishment.highlightBadge">
+    <span class="badge-text">{{ establishment.highlightBadge }}</span>
+  </div>
 
-<h1>Conheça nossas casas cadastradas</h1>
+  <!-- Container da imagem principal -->
+  <div class="image-container">
+    <img
+      [src]="establishment.imageUrl || '/'"
+      [alt]="establishment.name"
+      class="main-image"
+      loading="lazy"
+    />
 
-
-<div id="carouselExample" >
-
-
-
-    <div class="carousel-item">
-      <img src="assets/sitio2.jpg" class="d-block w-100" alt="..." />
-      <div>
-       <h5>
-      sitio tudo nosso
-
-    </h5>
-    <p >🎵 Ambiente: Eletrônico, funk, open bar. Mais de 10 anos de história.</p>
-    <ul class="list-unstyled-mb-3">
-      <li>📍 Local: Copacabana, RJ</li>
-      <li>🛡️ Segurança: QR code + equipe privada</li>
-      <li>🕐 Horário: Sex a Dom, 20h às 5h</li>
-      <li>🎟️ Reservas: Camarote Gold, Mesa VIP</li>
-    </ul>
-
-
+    <!-- Overlay com mini galeria -->
+    <div class="image-overlay" *ngIf="establishment.gallery && establishment.gallery.length > 0">
+      <div class="gallery-dots">
+        <span
+          class="dot"
+          *ngFor="let image of establishment.gallery.slice(0, 3); let i = index"
+          [class.active]="i === 0"
+        ></span>
       </div>
-       <button class="buttonReservar">Reservar</button>
-
     </div>
+
+    <!-- Botão de curtir -->
+    <button
+      class="like-btn"
+      (click)="toggleLike()"
+      [class.liked]="isLiked"
+      type="button"
+    >
+      <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </button>
+
+    <!-- Badge de lotação -->
+    <div class="availability-badge" *ngIf="establishment.availableReservations !== undefined">
+      <span class="availability-text">
+        {{ establishment.availableReservations > 0 ? establishment.availableReservations + ' vagas' : 'Lotado' }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Conteúdo do card -->
+  <div class="card-content">
+    <!-- Header com nome e avaliação -->
+    <div class="card-header">
+      <h3 class="establishment-name">{{ establishment.name }}</h3>
+      <div class="rating" *ngIf="establishment.rating">
+        <div class="stars">
+          <span
+            class="star"
+            *ngFor="let star of getStarsArray(establishment.rating); let i = index"
+            [class.filled]="i < (establishment.rating)"
+            [class.half]="i === (establishment.rating) && establishment.rating % 1 !== 0"
+          >
+            ⭐
+          </span>
+        </div>
+        <span class="rating-number">({{ establishment.rating }})</span>
+      </div>
+    </div>
+
+    <!-- Descrição -->
+    <p class="description" *ngIf="establishment.description">
+      {{ establishment.description }}
+    </p>
+
+    <!-- Localização -->
+    <div class="location" *ngIf="establishment.neighborhood || establishment.city">
+      <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      <span class="location-text">
+        {{ establishment.neighborhood }}{{ establishment.neighborhood && establishment.city ? ', ' : '' }}{{ establishment.city }}
+      </span>
+    </div>
+
+    <!-- Características/Tags -->
+    <div class="features" *ngIf="establishment.features && establishment.features.length > 0">
+      <div class="features-container">
+        <span
+          class="feature-tag"
+          *ngFor="let feature of establishment.features.slice(0, 4)"
+          [title]="feature"
+        >
+          {{ getFeatureIcon(feature) }} {{ feature }}
+        </span>
+        <span class="more-features" *ngIf="establishment.features.length > 4">
+          +{{ establishment.features.length - 4 }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Reviews resumo -->
+    <div class="reviews-summary" *ngIf="establishment.reviewsCount">
+      <div class="reviews-text">
+        <span class="reviews-count">{{ establishment.reviewsCount }} avaliações</span>
+        <span class="reviews-preview">"{{ establishment.lastReview || 'Ambiente incrível!' }}"</span>
+      </div>
+    </div>
+
+    <!-- Ações -->
+    <div class="card-actions">
+      <button
+        class="action-btn secondary"
+        (click)="onKnowMore()"
+        type="button"
+      >
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 16v-4"></path>
+          <path d="M12 8h.01"></path>
+        </svg>
+        Conhecer a casa
+      </button>
+
+      <button
+        class="action-btn primary"
+        (click)="onReserveNow()"
+        type="button"
+      >
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Reserve agora
+      </button>
+    </div>
+  </div>
+
+  <!-- Efeito de hover/loading -->
+  <div class="card-loading" *ngIf="isLoading">
+    <div class="loading-spinner"></div>
+  </div>
 </div>

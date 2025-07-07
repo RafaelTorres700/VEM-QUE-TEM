@@ -1,78 +1,584 @@
-.carouselExample {
-  padding-top: 500px;
-   width: 150px;
-  height: 60vh;
-  margin-top: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  text-align: center;
+/* cards-usuarios.component.scss */
 
+// Variáveis de cores - Tema "Vem Que Tem"
+$primary-purple: #6a4c93;
+$secondary-purple: #8b5fbf;
+$accent-neon: #00f5ff;
+$accent-pink: #ff006e;
+$dark-bg: #0a0a0f;
+$card-bg: #1a1a24;
+$text-primary: #ffffff;
+$text-secondary: #b8b8d1;
+$text-muted: #8a8aa0;
+$gradient-primary: linear-gradient(135deg, $primary-purple 0%, $secondary-purple 100%);
+$gradient-neon: linear-gradient(135deg, $accent-neon 0%, $accent-pink 100%);
+$shadow-glow: 0 4px 20px rgba(106, 76, 147, 0.3);
+$shadow-hover: 0 8px 30px rgba(106, 76, 147, 0.4);
+
+// Mixins
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.carousel-item{
-  margin-top: 50px;
-  transition: transform 0.5s ease;
+@mixin neon-glow($color: $accent-neon) {
+  box-shadow: 0 0 10px $color, 0 0 20px $color, 0 0 30px $color;
 }
 
-
-button {
-  width: 100px;
-  height: 40px;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
+@mixin smooth-transition($duration: 0.3s) {
+  transition: all $duration cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-img {
-  width: 300px;
-  height: 250px;
-  object-fit: cover;
-  margin: center;
-  margin-top: 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,1.5);
+// Componente principal
+.establishment-card {
+  margin: 20px auto;
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: $card-bg;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: $shadow-glow;
+  @include smooth-transition(0.4s);
+  cursor: pointer;
 
-}
+  // Efeito hover no card
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: $shadow-hover;
 
-
-  h5{
-    text-align: center;
-  }
-  h5:hover {
-          color: var(--accent-color);
+    .main-image {
+      transform: scale(1.1);
     }
 
-  p{
-    text-align: center;
-  }
-   h1{margin-top: 100px;
-    color: black;
-    text-align: center;
+    .like-btn {
+      transform: scale(1.1);
+    }
+
+    .image-overlay {
+      opacity: 1;
+    }
   }
 
-  .buttonReservar{
-   width: 100px;
-  height: 40px;
+  // Estado quando curtido
+  &.liked {
+    .like-btn {
+      .heart-icon {
+        fill: $accent-pink;
+        stroke: $accent-pink;
+        animation: heartBeat 0.6s ease-in-out;
+      }
+    }
+  }
+}
+
+// Container da imagem
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+
+  .main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include smooth-transition(0.6s);
+  }
+}
+
+// Badge de destaque
+.highlight-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+
+  .badge-text {
+    background: $gradient-neon;
+    color: $dark-bg;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @include neon-glow($accent-neon);
+    animation: pulse 2s infinite;
+  }
+}
+
+// Botão de curtir
+.like-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  @include smooth-transition();
+  @include glass-effect;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  &.liked {
+    background: rgba(255, 0, 110, 0.2);
+    @include neon-glow($accent-pink);
+  }
+
+  .heart-icon {
+    width: 20px;
+    height: 20px;
+    color: $text-primary;
+    @include smooth-transition();
+  }
+}
+
+// Badge de disponibilidade
+.availability-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 10;
+
+  .availability-text {
+    background: rgba(0, 0, 0, 0.8);
+    color: $text-primary;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    @include glass-effect;
+  }
+}
+
+// Overlay da galeria
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 20px 16px 16px;
+  opacity: 0;
+  @include smooth-transition();
+
+  .gallery-dots {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      @include smooth-transition();
+
+      &.active {
+        background: $accent-neon;
+        @include neon-glow($accent-neon);
+      }
+    }
+  }
+}
+
+// Conteúdo do card
+.card-content {
+  padding: 24px;
+  color: $text-primary;
+}
+
+// Header do card
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+
+  .establishment-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: $gradient-primary;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+
+    .stars {
+      display: flex;
+      gap: 2px;
+
+      .star {
+        font-size: 0.875rem;
+        filter: grayscale(1);
+        @include smooth-transition();
+
+        &.filled {
+          filter: grayscale(0);
+        }
+
+        &.half {
+          filter: grayscale(0.5);
+        }
+      }
+    }
+
+    .rating-number {
+      font-size: 0.875rem;
+      color: $text-secondary;
+      font-weight: 600;
+    }
+  }
+}
+
+// Descrição
+.description {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  line-height: 1.4;
+  margin: 0 0 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Localização
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  .location-icon {
+    width: 16px;
+    height: 16px;
+    color: $accent-neon;
+    flex-shrink: 0;
+  }
+
+  .location-text {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    font-weight: 500;
+  }
+}
+
+// Características
+.features {
+  margin-bottom: 16px;
+
+  .features-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+
+    .feature-tag {
+      background: rgba(106, 76, 147, 0.2);
+      color: $text-primary;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid rgba(106, 76, 147, 0.3);
+      @include smooth-transition();
+
+      &:hover {
+        background: rgba(106, 76, 147, 0.4);
+        transform: translateY(-2px);
+      }
+    }
+
+    .more-features {
+      color: $text-muted;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+    }
+  }
+}
+
+// Resumo de reviews
+.reviews-summary {
   margin-bottom: 20px;
 
-
-  }
-
-
-  .list-unstyled-mb-3 {
+  .reviews-text {
     display: flex;
     flex-direction: column;
-    padding-left: 200px;
-    text-align: center;
+    gap: 4px;
 
+    .reviews-count {
+      font-size: 0.75rem;
+      color: $text-muted;
+      font-weight: 600;
+    }
 
-    li {
-      width: 100%;
-      text-align: left;
-      margin: 0 auto;
-      text-decoration: none;
+    .reviews-preview {
+      font-size: 0.875rem;
+      color: $text-secondary;
+      font-style: italic;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+
+// Ações do card
+.card-actions {
+  display: flex;
+  gap: 12px;
+
+  .action-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    @include smooth-transition();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    .btn-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    &.secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: $text-primary;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+    }
+
+    &.primary {
+      background: $gradient-neon;
+      color: $dark-bg;
+      font-weight: 700;
+      @include neon-glow($accent-neon);
+
+      &:hover {
+        transform: translateY(-2px) scale(1.05);
+        @include neon-glow($accent-pink);
+      }
+    }
+  }
+}
+
+// Loading
+.card-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 26, 36, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  z-index: 100;
+
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(106, 76, 147, 0.3);
+    border-top: 3px solid $accent-neon;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+// Animações
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .establishment-card {
+    max-width: 100%;
+    margin: 0 auto;
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+
+      .establishment-name {
+        font-size: 1.25rem;
+      }
+    }
+
+    .card-actions {
+      flex-direction: column;
+      gap: 8px;
+
+      .action-btn {
+        padding: 14px 16px;
+        font-size: 0.875rem;
+      }
+    }
+
+    .features-container {
+      .feature-tag {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+      }
     }
   }
 
+  .image-container {
+    height: 200px;
+  }
+
+  .like-btn {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    right: 12px;
+
+    .heart-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .highlight-badge {
+    top: 12px;
+    left: 12px;
+
+    .badge-text {
+      padding: 4px 8px;
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .establishment-card {
+    border-radius: 16px;
+
+    .image-container {
+      height: 180px;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-header {
+      .establishment-name {
+        font-size: 1.125rem;
+      }
+    }
+
+    .description {
+      font-size: 0.8rem;
+    }
+
+    .location {
+      .location-text {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+// Estados especiais
+.establishment-card {
+  // Card em destaque
+  &.featured {
+    border: 2px solid $accent-neon;
+    @include neon-glow($accent-neon);
+
+    .highlight-badge .badge-text {
+      background: $gradient-neon;
+      animation: pulse 1.5s infinite;
+    }
+  }
+
+  // Card lotado
+  &.full-capacity {
+    .availability-badge .availability-text {
+      background: rgba(255, 0, 110, 0.8);
+      color: $text-primary;
+    }
+  }
+
+  // Card em loading
+  &.loading {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+}
+
+// Efeitos de hover específicos
+.establishment-card:hover {
+  .features-container .feature-tag {
+    transform: translateY(-1px);
+  }
+
+  .reviews-summary {
+    .reviews-preview {
+      color: $text-primary;
+    }
+  }
+
+  .location {
+    .location-icon {
+      color: $accent-pink;
+    }
+  }
+}
