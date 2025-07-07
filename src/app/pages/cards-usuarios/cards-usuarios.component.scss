@@ -5,7 +5,7 @@
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 350px;
-  margin: 20px;
+  margin: 20px auto;
 
   &:hover {
     transform: translateY(-5px);
@@ -135,3 +135,127 @@
     font-size: 20px;
   }
 }
+
+
+
+
+// .user-card {
+//   background: #fff;
+//   border-radius: 15px;
+//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+//   overflow: hidden;
+//   transition: transform 0.3s ease, box-shadow 0.3s ease;
+//   max-width: 350px;
+//   margin: 20px auto; // Centraliza horizontalmente
+
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center; // Centraliza conteúdo interno
+
+//   &:hover {
+//     transform: translateY(-5px);
+//     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+//   }
+// }
+
+// .user-photo {
+//   position: relative;
+//   width: 100%;
+//   height: 280px;
+//   overflow: hidden;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     object-position: center;
+//     display: block;
+//     margin: 0 auto;
+//   }
+// }
+
+// .user-info {
+//   padding: 20px;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center; // Centraliza conteúdo
+// }
+
+// .user-name {
+//   font-size: 24px;
+//   font-weight: 600;
+//   margin: 0 0 15px 0;
+//   color: #333;
+//   text-align: center;
+// }
+
+// .user-details {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 8px;
+//   margin-bottom: 15px;
+//   align-items: center; // Centraliza detalhes
+
+//   span {
+//     display: flex;
+//     align-items: center;
+//     gap: 8px;
+//     font-size: 14px;
+//     color: #666;
+
+//     i {
+//       font-size: 16px;
+//     }
+//   }
+// }
+
+// .user-bio {
+//   font-size: 14px;
+//   line-height: 1.5;
+//   color: #555;
+//   margin: 0;
+//   text-align: center;
+// }
+
+// .user-actions {
+//   display: flex;
+//   gap: 10px;
+//   padding: 0 20px 20px 20px;
+//   width: 100%;
+//   justify-content: center; // Centraliza botões
+
+//   button {
+//     flex: 1;
+//     padding: 12px 16px;
+//     border: none;
+//     border-radius: 10px;
+//     font-size: 14px;
+//     font-weight: 600;
+//     cursor: pointer;
+//     transition: all 0.3s ease;
+
+//     &:hover {
+//       transform: translateY(-2px);
+//     }
+//   }
+// }
+
+// // Responsividade
+// @media (max-width: 768px) {
+//   .user-card {
+//     max-width: 100%;
+//     margin: 15px auto; // Mantém centralizado
+//   }
+
+//   .user-photo {
+//     height: 250px;
+//   }
+
+//   .user-name {
+//     font-size: 20px;
+//   }
+// }
