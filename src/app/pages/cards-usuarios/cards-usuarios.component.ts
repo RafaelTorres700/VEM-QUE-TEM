@@ -13,6 +13,8 @@ export class CardsUsuariosComponent {
   @Output() curtir = new EventEmitter<string>();
   @Output() convidar = new EventEmitter<string>();
 
+  contador = 0;
+
   calcularIdade(): number | null {
     if (!this.user?.dataNascimento) return null;
 
@@ -30,15 +32,11 @@ export class CardsUsuariosComponent {
     return idade;
   }
 
-  onCurtir(): void {
-    if (this.user?.id) {
-      this.curtir.emit(this.user.id);
-    }
+  contador2 = 0
+  incrementar() {
+    this.contador2++;
+    this.contador2 = this.contador2 + 1;
+
   }
 
-  onConvidar(): void {
-    if (this.user?.id) {
-      this.convidar.emit(this.user.id);
-    }
-  }
 }

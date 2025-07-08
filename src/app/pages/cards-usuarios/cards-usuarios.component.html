@@ -19,17 +19,26 @@
         <i class="location-icon">📍</i>
         {{ user.localizacao }}
       </span>
+      <span class="user-contador">
+        <i class="contador-icon">❤️{{ contador2 }}</i>
+      </span>
     </div>
 
     <p *ngIf="user.miniBio" class="user-bio">{{ user.miniBio }}</p>
   </div>
 
   <div class="user-actions">
-    <button class="btn-curtir" (click)="onCurtir()">
+    <button class="btn-curtir" (click)="incrementar()">
       ❤️ Curtir
     </button>
-    <button class="btn-convidar" (click)="onConvidar()">
+    <span class="contador-valor">Curtidas: {{ contador2 }}</span>
+
+
+
+
+    <!-- Botão de convidar, se quiser ativar depois -->
+    <!-- <button class="btn-convidar" (click)="onConvidar()">
       📩 Convidar
-    </button>
+    </button> -->
   </div>
 </div>
