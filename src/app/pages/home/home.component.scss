@@ -1,47 +1,28 @@
 /* SCSS file: removed invalid TypeScript/JavaScript code */
 
+
 .home-container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 100vw;
   margin: 0 auto;
   padding: 32px 16px;
   display: flex;
   flex-direction: column;
   gap: 48px;
-
+  box-sizing: border-box;
+  overflow-x: hidden; // Evita rolagem horizontal
 }
 
 .carousel-section {
   width: 100%;
   display: flex;
-  align-items: center;
-
-  .carousel {
-    height: 200px; // Deixa o carrossel mais fino
-    max-width: 900px;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-
-    .carousel-track {
-      display: flex;
-      gap: 0;
-      animation: slide-left 12s infinite linear; // Animação só para um lado
-    }
-
-    .carousel-image {
-      width: 100%;
-      min-width: 100%;
-      height: 200px; // Ajusta altura das imagens
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-  }
   justify-content: center;
   margin-bottom: 32px;
 
   .carousel {
     width: 100%;
     max-width: 900px;
+    height: 260px;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
@@ -55,7 +36,7 @@
     .carousel-image {
       width: 100%;
       min-width: 100%;
-      height: 320px;
+      height: 260px;
       object-fit: cover;
       transition: transform 0.5s;
     }
@@ -82,47 +63,140 @@
 
 .usuarios-section,
 .estabelecimentos-section {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+
   h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 24px;
     color: #4a1976;
-    text-align: left;
+    text-align: center;
   }
 }
 
 .usuarios-cards,
 .estabelecimentos-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+
+  >* {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
 
-@media (max-width: 900px) {
-  .carousel-section .carousel-image {
-    height: 200px;
+// Responsividade para tablets grandes (1200px+)
+@media (min-width: 1200px) {
+  .home-container {
+    max-width: 1200px;
+    padding: 32px 24px;
   }
 
   .usuarios-cards,
   .estabelecimentos-cards {
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
   }
 }
 
-@media (max-width: 600px) {
+// Responsividade para tablets médios (900px - 1199px)
+@media (min-width: 900px) and (max-width: 1199px) {
   .home-container {
-    padding: 8px;
+    padding: 24px 16px;
+  }
+
+  .usuarios-cards,
+  .estabelecimentos-cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .carousel-section .carousel,
+  .carousel-section .carousel-image {
+    height: 220px;
+  }
+}
+
+// Responsividade para tablets pequenos (600px - 899px)
+@media (min-width: 600px) and (max-width: 899px) {
+  .home-container {
+    padding: 16px 12px;
     gap: 32px;
   }
 
+  .usuarios-cards,
+  .estabelecimentos-cards {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .carousel-section .carousel,
+  .carousel-section .carousel-image {
+    height: 180px;
+  }
+
+  .usuarios-section h2,
+  .estabelecimentos-section h2 {
+    font-size: 1.75rem;
+  }
+}
+
+// Responsividade para celulares (até 599px)
+@media (max-width: 599px) {
+  .home-container {
+    padding: 16px 8px;
+    gap: 24px;
+  }
+
+  .usuarios-cards,
+  .estabelecimentos-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 8px;
+  }
+
+  .carousel-section .carousel,
+  .carousel-section .carousel-image {
+    height: 140px;
+  }
+
+  .usuarios-section h2,
+  .estabelecimentos-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+}
+
+// Responsividade para celulares muito pequenos (até 400px)
+@media (max-width: 400px) {
+  .home-container {
+    padding: 12px 4px;
+    gap: 20px;
+  }
+
+  .usuarios-cards,
+  .estabelecimentos-cards {
+    padding: 0 4px;
+    gap: 12px;
+  }
+
+  .carousel-section .carousel,
   .carousel-section .carousel-image {
     height: 120px;
   }
 
-  .usuarios-cards,
-  .estabelecimentos-cards {
-    flex-direction: column;
-    align-items: center;
+  .usuarios-section h2,
+  .estabelecimentos-section h2 {
+    font-size: 1.25rem;
   }
 }

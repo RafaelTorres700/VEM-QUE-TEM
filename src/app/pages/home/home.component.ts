@@ -25,10 +25,10 @@ export class HomeComponent {
     '/assets/boate1.jpg',
     '/assets/boate2.jpg',
     '/assets/boate3.',
-    '/assets/restaurante1.jpg',
+    '/assets/mulher3.jpg',
     '/assets/churrascaria1.jpg',
     '/assets/padaria1.jpg',
-    '/assets/sorveteria1.jpg'
+    '/assets/sitio3.jpeg'
   ];
 
   // Usuários fictícios
