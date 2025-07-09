@@ -1,1 +1,36 @@
+<div class="home-container">
+  <!-- Carrossel de Imagens -->
+  <section class="carousel-section">
+    <div class="carousel">
+      <div class="carousel-track">
+        <img
+          *ngFor="let img of carouselImages"
+          [src]="img"
+          alt="Imagem do carrossel"
+          class="carousel-image"
+        />
+      </div>
+    </div>
+  </section>
 
+  <!-- Cards de Usuários -->
+  <section class="usuarios-section">
+    <h2>Conheça pessoas incríveis</h2>
+    <div class="usuarios-cards">
+      <app-cards-usuarios *ngFor="let usuario of usuarios" [user]="usuario">
+      </app-cards-usuarios>
+    </div>
+  </section>
+
+  <!-- Cards de Estabelecimentos -->
+  <section class="estabelecimentos-section">
+    <h2>Locais para curtir</h2>
+    <div class="estabelecimentos-cards">
+      <app-cards-estabelecimentos
+        *ngFor="let est of estabelecimentos"
+        estabelecimento="est"
+      >
+      </app-cards-estabelecimentos>
+    </div>
+  </section>
+</div>

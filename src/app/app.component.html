@@ -1,58 +1,9 @@
-<!--
-<div>
-<app-header></app-header>
-</div>
-
-
-<div>
-<app-sidebar></app-sidebar>
-</div>
-
-<app-cards-usuarios
-  [user]="userData"
-  (curtir)="onUserCurtir($event)"
-  (convidar)="onUserConvidar($event)">
-</app-cards-usuarios>
-
-<div class="main-content">
-  <router-outlet></router-outlet>
-</div>
-
-<div>
-<app-footer></app-footer>
-</div> -->
-
-
-<!-- Layout principal -->
 <div class="app-container">
-  <!-- Header -->
   <app-header></app-header>
 
-  <!-- Sidebar -->
-  <app-sidebar></app-sidebar>
+  <!-- <app-sidebar></app-sidebar> -->
 
-  <!-- Conteúdo principal -->
-  <main class="main-content">
-    <div class="cards-container">
-      <h2>Pessoas próximas a você</h2>
-
-      <!-- Loop para renderizar os cards -->
-      <div class="cards-grid">
-        <app-cards-usuarios
-          *ngFor="let usuario of usuarios"
-          [user]="usuario"
-          (curtir)="onUserCurtir($event)"
-          (convidar)="onUserConvidar($event)">
-        </app-cards-usuarios>
-      </div>
-    </div>
-  </main>
-
-
-
-  <!-- Router outlet para navegação -->
   <router-outlet></router-outlet>
 
-  <!-- Footer -->
   <app-footer></app-footer>
 </div>

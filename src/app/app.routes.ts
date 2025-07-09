@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { CardsEstabelecimentosComponent } from './pages/cards-estabelecimentos/cards-estabelecimentos.component';
-import { CardsUsuariosComponent } from './pages/cards-usuarios/cards-usuarios.component';
 import { CreateAcontComponent } from './formularios/create-acont/create-acont.component';
 import { FooterComponent } from '../layout/footer/footer.component';
 import { LoginPageComponent } from './formularios/login-page/login-page.component';
@@ -27,10 +26,7 @@ export const routes: Routes = [
         path: "cardsestabelecimentos",
         component: CardsEstabelecimentosComponent
     },
-    {
-        path: "cardsusuarios",
-        component: CardsUsuariosComponent
-    },
+
     {
         path: "criarconta",
         component: CreateAcontComponent

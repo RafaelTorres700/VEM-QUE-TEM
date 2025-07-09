@@ -1,0 +1,128 @@
+/* SCSS file: removed invalid TypeScript/JavaScript code */
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+}
+
+.carousel-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .carousel {
+    height: 200px; // Deixa o carrossel mais fino
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+
+    .carousel-track {
+      display: flex;
+      gap: 0;
+      animation: slide-left 12s infinite linear; // Animação só para um lado
+    }
+
+    .carousel-image {
+      width: 100%;
+      min-width: 100%;
+      height: 200px; // Ajusta altura das imagens
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+  }
+  justify-content: center;
+  margin-bottom: 32px;
+
+  .carousel {
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+
+    .carousel-track {
+      display: flex;
+      gap: 0;
+      animation: slide 12s infinite linear;
+    }
+
+    .carousel-image {
+      width: 100%;
+      min-width: 100%;
+      height: 320px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  33% {
+    transform: translateX(-100%);
+  }
+
+  66% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.usuarios-section,
+.estabelecimentos-section {
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #4a1976;
+    text-align: left;
+  }
+}
+
+.usuarios-cards,
+.estabelecimentos-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: flex-start;
+}
+
+@media (max-width: 900px) {
+  .carousel-section .carousel-image {
+    height: 200px;
+  }
+
+  .usuarios-cards,
+  .estabelecimentos-cards {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-container {
+    padding: 8px;
+    gap: 32px;
+  }
+
+  .carousel-section .carousel-image {
+    height: 120px;
+  }
+
+  .usuarios-cards,
+  .estabelecimentos-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
