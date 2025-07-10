@@ -35,7 +35,7 @@ export class CardsUsuariosComponent {
   contador2 = 0
   incrementar() {
     this.contador2++;
-    this.contador2 = this.contador2 + 1;
+   
 
   }
 

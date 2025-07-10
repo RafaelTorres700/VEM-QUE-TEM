@@ -19,9 +19,7 @@
         <i class="location-icon">📍</i>
         {{ user.localizacao }}
       </span>
-      <span class="user-contador">
-        <i class="contador-icon">❤️{{ contador2 }}</i>
-      </span>
+
     </div>
 
     <p *ngIf="user.miniBio" class="user-bio">{{ user.miniBio }}</p>
@@ -31,7 +29,10 @@
     <button class="btn-curtir" (click)="incrementar()">
       ❤️ Curtir
     </button>
-    <span class="contador-valor">Curtidas: {{ contador2 }}</span>
+     <span class="user-contador">
+        <i class="contador-icon">❤️{{ contador2 }}</i>
+      </span>
+   
 
 
 
