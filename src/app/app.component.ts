@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from "../layout/footer/footer.component";
 import { HeaderComponent } from '../layout/header/header.component';
-import { SidebarComponent } from '../layout/sidebar/sidebar.component';
+
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,6 @@ import { SidebarComponent } from '../layout/sidebar/sidebar.component';
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SidebarComponent,
     HeaderComponent,
     FooterComponent,
 
