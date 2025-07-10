@@ -20,13 +20,14 @@
   margin-bottom: 32px;
 
   .carousel {
+    margin-top: 50px;
     width: 100%;
-    max-width: 900px;
+    max-width: 2000px; // Largura máxima do carrossel
     height: 200px;
     overflow: hidden;
     border-radius: 20px;
     position: relative;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    
 
     .carousel-track {
       display: flex;
@@ -59,6 +60,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%); // Move metade da largura total (10 imagens)
   }
@@ -91,7 +93,7 @@
   padding: 0;
   box-sizing: border-box;
 
-  > * {
+  >* {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;

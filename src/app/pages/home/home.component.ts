@@ -36,7 +36,7 @@ export class HomeComponent {
     {
       id: '1',
       nome: 'Ana Clara',
-      fotoUrl: '/assets/mulher1.jpg',
+      fotoUrl: '/assets/fotosusuarios/mulher1.jpg',
       genero: 'Feminino',
       dataNascimento: '1995-04-12',
       localizacao: 'São Paulo, SP',
@@ -46,7 +46,7 @@ export class HomeComponent {
     {
       id: '2',
       nome: 'Lucas Silva',
-      fotoUrl: '/assets/homem1.jpg',
+      fotoUrl: '/assets/fotosusuarios/homem1.jpg',
       genero: 'Masculino',
       dataNascimento: '1990-09-25',
       localizacao: 'Rio de Janeiro, RJ',
@@ -56,7 +56,7 @@ export class HomeComponent {
     {
       id: '3',
       nome: 'Mariana Souza',
-      fotoUrl: '/assets/mulher3.jpg',
+      fotoUrl: '/assets/fotosusuarios/mulher3.jpg',
       genero: 'Feminino',
       dataNascimento: '1998-01-08',
       localizacao: 'Belo Horizonte, MG',
@@ -66,7 +66,7 @@ export class HomeComponent {
     {
       id: '4',
       nome: 'Pedro Henrique',
-      fotoUrl: '/assets/homem2.jpg',
+      fotoUrl: '/assets/fotosusuarios/homem2.jpg',
       genero: 'Masculino',
       dataNascimento: '1988-07-15',
       localizacao: 'Curitiba, PR',
@@ -76,7 +76,7 @@ export class HomeComponent {
     {
       id: '5',
       nome: 'Juliana Alves',
-      fotoUrl: '/assets/mulher4.jpg',
+      fotoUrl: '/assets/fotosusuarios/mulher2.jpg',
       genero: 'Feminino',
       dataNascimento: '1992-11-30',
       localizacao: 'Salvador, BA',
@@ -86,7 +86,7 @@ export class HomeComponent {
     {
       id: '6',
       nome: 'Rafael Costa',
-      fotoUrl: '/assets/homem3.jpg',
+      fotoUrl: '/assets/fotosusuarios/homem1.jpg',
       genero: 'Masculino',
       dataNascimento: '1996-03-22',
       localizacao: 'Porto Alegre, RS',
@@ -96,7 +96,7 @@ export class HomeComponent {
     {
       id: '7',
       nome: 'Camila Rocha',
-      fotoUrl: '/assets/mulher5.jpg',
+      fotoUrl: '/assets/fotosusuarios/mulher1.jpg',
       genero: 'Feminino',
       dataNascimento: '1994-06-18',
       localizacao: 'Fortaleza, CE',
@@ -106,7 +106,7 @@ export class HomeComponent {
     {
       id: '8',
       nome: 'Thiago Lima',
-      fotoUrl: '/assets/homem4.jpg',
+      fotoUrl: '/assets/fotosusuarios/homem1.jpg',
       genero: 'Masculino',
       dataNascimento: '1985-12-05',
       localizacao: 'Brasília, DF',
@@ -116,7 +116,7 @@ export class HomeComponent {
     {
       id: '9',
       nome: 'Beatriz Mendes',
-      fotoUrl: '/assets/mulher6.jpg',
+      fotoUrl: '/assets/fotosusuarios/mulher3.jpg',
       genero: 'Feminino',
       dataNascimento: '1999-08-27',
       localizacao: 'Recife, PE',
@@ -126,7 +126,7 @@ export class HomeComponent {
     {
       id: '10',
       nome: 'Felipe Torres',
-      fotoUrl: '/assets/homem5.jpg',
+      fotoUrl: '/assets/fotosusuarios/homem2.jpg',
       genero: 'Masculino',
       dataNascimento: '1993-02-14',
       localizacao: 'Manaus, AM',
@@ -140,7 +140,7 @@ export class HomeComponent {
     {
       id: '1',
       nome: 'Bar do Zé',
-      fotoUrl: 'assets/boate1.jpg',
+      fotoUrl: '/assets/fotos-estabelecimentos/boate1.jpg',
       categoria: 'Bar',
       endereco: 'Rua das Flores, 123',
       descricao: 'O melhor bar da cidade!'
@@ -148,7 +148,7 @@ export class HomeComponent {
     {
       id: '2',
       nome: 'Café Central',
-      fotoUrl: '/assets/boate2.jpg',
+      fotoUrl: '/fotos-estabelecimentos/boate1.jpg',
       categoria: 'Café',
       endereco: 'Av. Brasil, 456',
       descricao: 'Cafés especiais e ambiente aconchegante.'
