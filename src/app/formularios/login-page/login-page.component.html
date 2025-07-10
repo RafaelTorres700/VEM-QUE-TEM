@@ -1,91 +1,93 @@
-<!-- <div class="form-container">
-  <div class="header">
-    <h2><span class="login-icon">🔐</span>Login</h2>
-    <p>Acesse sua conta para continuar</p>
-  </div>
-
-  <div class="success-message" id="successMessage">
-    ✅ Login realizado com sucesso!
-  </div>
-
-  <div class="error-message" id="errorMessage">
-    ❌ Erro ao fazer login. Verifique suas credenciais.
-  </div>
-
-  <form id="loginForm" autocomplete="on">
-    <div class="form-group">
-      <label for="email">E-mail <span class="required">*</span></label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        autocomplete="username"
-        placeholder="seu@email.com"
-        required
-      />
-      <div class="field-error" id="emailError">E-mail inválido</div>
+<div class="login-wrapper">
+  <div class="login-container">
+    <!-- Logo/Header -->
+    <div class="login-header">
+      <div class="logo">
+        <i class="fas fa-heart"></i>
+      </div>
+      <h2>Bem-vindo de volta</h2>
+      <p class="subtitle">Faça login para continuar</p>
     </div>
 
-    <div class="form-group">
-      <label for="senha">Senha <span class="required">*</span></label>
-      <div class="password-input-container">
-        <input
-          type="password"
-          id="senha"
-          name="senha"
-          autocomplete="current-password"
-          placeholder="Digite sua senha"
-          required
-        />
-        <button type="button" class="password-toggle" id="togglePassword">
-          👁️
+    <!-- Formulário -->
+    <form class="login-form">
+      <!-- Campo Usuário -->
+      <div class="form-group">
+        <label for="usuario">Usuário</label>
+        <div class="input-wrapper">
+          <i class="fas fa-user input-icon"></i>
+          <input
+            id="usuario"
+            [(ngModel)]="usuario"
+            name="usuario"
+            placeholder="Digite seu usuário"
+            type="text"
+            class="form-input"
+            autocomplete="username"
+          />
+        </div>
+      </div>
+
+      <!-- Campo Senha -->
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <div class="input-wrapper">
+          <i class="fas fa-lock input-icon"></i>
+          <input
+            id="senha"
+            [(ngModel)]="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            type="password"
+            class="form-input"
+            autocomplete="current-password"
+          />
+        </div>
+      </div>
+
+      <!-- Opções extras -->
+      <div class="form-options">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" class="checkbox" />
+          <span class="checkmark"></span>
+          Lembrar de mim
+        </label>
+        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+      </div>
+
+      <!-- Mensagem de erro -->
+      <div *ngIf="erro" class="error-message">
+        <i class="fas fa-exclamation-circle"></i>
+        Login inválido. Verifique suas credenciais.
+      </div>
+
+      <!-- Botão de login -->
+      <button type="button" (click)="entrar()" class="login-btn">
+        <span class="btn-text">Entrar</span>
+        <i class="fas fa-arrow-right btn-icon"></i>
+      </button>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span>ou</span>
+      </div>
+
+      <!-- Login social (opcional) -->
+      <div class="social-login">
+        <button type="button" class="social-btn google-btn">
+          <i class="fab fa-google"></i>
+          Continuar com Google
+        </button>
+        <button type="button" class="social-btn facebook-btn">
+          <i class="fab fa-facebook-f"></i>
+          Continuar com Facebook
         </button>
       </div>
-      <div class="field-error" id="senhaError">Senha é obrigatória</div>
-    </div>
 
-    <div class="checkbox-row">
-      <input type="checkbox" id="lembrarLogin" name="lembrarLogin" />
-      <label for="lembrarLogin"> Lembrar-me neste dispositivo </label>
-    </div>
-
-    <div class="forgot-password">
-      <a href="#" id="forgotPassword">Esqueceu sua senha?</a>
-    </div>
-
-    <button type="submit" id="submitBtn">
-      <span class="loading" id="loadingSpinner"></span>
-      <span id="submitText">🚀 Entrar</span>
-    </button>
-
-    <div class="divider">
-      <span>ou</span>
-    </div>
-
-    <div class="social-login">
-      <button type="button" class="social-btn google-btn" id="googleLogin">
-        🔍 Google
-      </button>
-      <button type="button" class="social-btn" id="facebookLogin">
-        📘 Facebook
-      </button>
-    </div>
-
-    <div class="register-link">
-      Não tem uma conta?
-      <a href="/criarconta" id="registerLink"
-        >Cadastre-se</a
-      >
-    </div>
-  </form>
+      <!-- Link para cadastro -->
+      <div class="signup-link">
+        <p>Não tem uma conta? <a href="/criarconta">Cadastre-se aqui</a></p>
+      </div>
+    </form>
+  </div>
 </div>
--->
-
-
-<div class="simple-login-container">
-  <h2>Login</h2>
-  <input [(ngModel)]="usuario" placeholder="Usuário" />
-  <input [(ngModel)]="senha" placeholder="Senha" type="password" />
-  <button (click)="entrar()">Entrar</button>
-  <p *ngIf="erro" style="color:red">Login inválido</p>
-</div> -->
