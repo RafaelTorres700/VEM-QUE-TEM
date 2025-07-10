@@ -17,19 +17,18 @@ import { CardsEstabelecimentosComponent } from '../cards-estabelecimentos/cards-
   styleUrls: ['./home.component.scss']  // CORRETO!
 })
 export class HomeComponent {
-  // Imagens do carrossel (coloque as imagens na pasta public/assets/carrossel/)
+  // Imagens do carrossel - usando as imagens da pasta #assets
   carouselImages = [
-
-    
-    '/assets/bar1.jpg',
-    '/assets/boate1.jpg',
-    '/assets/boate2.jpg',
-    'assets/boate3.',
-    '/assets/mulher3.jpg',
-    '/assets/churrascaria1.jpg',
-    '/assets/padaria1.jpg',
-    '/assets/sitio3.jpeg'
-
+    '/assets/fotos-estabelecimentos/bar1.jpg',
+    '/assets/fotos-estabelecimentos/boate1.jpg',
+    '/assets/fotos-estabelecimentos/boate2.jpg',
+    '/assets/fotos-estabelecimentos/boate3.jpg',
+    '/assets/fotos-estabelecimentos/reservarestaurante1.jpg',
+    '/assets/fotos-estabelecimentos/reservarestaurante2.jpeg',
+    '/assets/fotos-estabelecimentos/reservarestaurante3.jpeg',
+    '/assets/fotos-estabelecimentos/sitio1.jpg',
+    '/assets/fotos-estabelecimentos/sitio2.jpg',
+    '/assets/fotosusuarios/mulher1.jpg'
   ];
 
   // Usuários fictícios
