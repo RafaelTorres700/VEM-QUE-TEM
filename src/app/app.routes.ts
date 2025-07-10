@@ -8,13 +8,18 @@ import { HeaderComponent } from '../layout/header/header.component';
 import { SidebarComponent } from '../layout/sidebar/sidebar.component';
 import { CriarEventosComponent } from './formularios/criar-eventos/criar-eventos.component';
 import { CreateEstabelecimentoComponent } from './formularios/create-estabelecimento/create-estabelecimento.component';
+import { authGuard } from './auth.guard';
 
 
 export const routes: Routes = [
     {
         path: "",
-        component: HomeComponent
+        redirectTo: "/loginpage",
+        pathMatch: "full"
     },
+
+    { path: 'home', component: HomeComponent,
+      canActivate: [authGuard] },
 
 
     {

@@ -1,46 +1,32 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup,FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule], // ✅ Importação obrigatória
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule], // ✅ Importação obrigatória
   providers: [AuthService]
 })
 export class LoginPageComponent {
-  formLogin: FormGroup;
+ usuario: string = '';
+ senha: string = '';
+ erro: boolean = false;
 
 
+ constructor(private auth: AuthService, private router: Router) {}
+ entrar() {
+ if (this.auth.login(this.usuario, this.senha)) {
+ this.router.navigate(['/home']);
+ }
 
-
-  constructor(private fb: FormBuilder, private authService: AuthService) {
-    this.formLogin = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required]]
-    });
-  }
-
-  onSubmit(): void {
-    if (this.formLogin.valid) {
-      const credenciais = this.formLogin.value;
-      this.authService.login(credenciais).subscribe({
-        next: (res) => {
-          localStorage.setItem('token', res.token);
-          alert('Login realizado com sucesso!');
-          // redirecionar conforme necessário
-        },
-        error: (err) => {
-          alert('Falha no login: ' + (err.error?.erro || 'Erro desconhecido.'));
-        }
-      });
-    }
-  }
-
-
-
+ else {
+ this.erro = true;
+ }
+ }
 }

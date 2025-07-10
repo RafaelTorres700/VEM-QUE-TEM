@@ -1,4 +1,4 @@
-<div class="form-container">
+<!-- <div class="form-container">
   <div class="header">
     <h2><span class="login-icon">🔐</span>Login</h2>
     <p>Acesse sua conta para continuar</p>
@@ -79,5 +79,13 @@
     </div>
   </form>
 </div>
+-->
 
-<script src="../login-page/login-pages.ts"></script>
+
+<div class="simple-login-container">
+  <h2>Login</h2>
+  <input [(ngModel)]="usuario" placeholder="Usuário" />
+  <input [(ngModel)]="senha" placeholder="Senha" type="password" />
+  <button (click)="entrar()">Entrar</button>
+  <p *ngIf="erro" style="color:red">Login inválido</p>
+</div> -->
