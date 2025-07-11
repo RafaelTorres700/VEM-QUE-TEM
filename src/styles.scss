@@ -15,17 +15,27 @@ body.menu-open {
   }
 }
 
-// Conteúdo principal
+// Conteúdo principal - CORREÇÃO PRINCIPAL
 .main-content {
-  margin-left: 0;
+  margin-left: 250px; // Sempre dar espaço para sidebar em desktop
   min-height: calc(100vh - 70px);
   padding: 20px;
   box-sizing: border-box;
+  transition: margin-left 0.3s ease;
 
-  // Em desktop, dar espaço para sidebar
-  @media (min-width: 769px) {
-    margin-left: 250px;
+  // Em mobile, remover margem
+  @media (max-width: 768px) {
+    margin-left: 0;
   }
+}
+
+// Wrapper para todos os componentes
+.component-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 // Animações suaves
@@ -36,4 +46,17 @@ body.menu-open {
 // Smooth scroll
 html {
   scroll-behavior: smooth;
+}
+
+// Classes utilitárias para formulários
+.form-container-responsive {
+  width: 100%;
+  max-width: 600px; // Tamanho padrão para formulários
+  margin: 0 auto;
+  padding: 20px;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 16px;
+  }
 }
