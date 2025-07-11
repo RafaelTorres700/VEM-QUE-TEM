@@ -1,18 +1,19 @@
 {
-  // Desativa a correção ortográfica (Code Spell Checker)
   "cSpell.enabled": false,
-
-  // Desativa validação de JavaScript e TypeScript integrada do VS Code
   "javascript.validate.enable": false,
   "typescript.validate.enable": false,
-
-  // Desativa ESLint (se estiver causando sublinhados)
   "eslint.enable": false,
-
-  // Sugestões HTML5 desativadas
   "html.suggest.html5": false,
 
-  // Palavras personalizadas adicionadas para evitar sublinhados
+  // ADICIONE ESTAS LINHAS:
+  "explorer.compactFolders": false,
+  "explorer.autoReveal": true,
+  "files.watcherExclude": {},
+  "files.exclude": {},
+  "search.exclude": {},
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
   "cSpell.words": [
     "criarconta",
     "loginpage",

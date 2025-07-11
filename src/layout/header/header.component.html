@@ -8,74 +8,74 @@
     </div>
 
     <!-- Botão hamburger para mobile -->
-    <button class="hamburger-btn" (click)="toggleMenu()" [class.active]="isMenuOpen">
+    <button
+      class="hamburger-btn"
+      (click)="toggleMenu()"
+      [class.active]="isMenuOpen"
+      aria-label="Menu de navegação"
+    >
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </button>
   </div>
-
-  <!-- Menu de navegação -->
-  <div class="main-layout">
-    <aside class="sidebar" [class.mobile-open]="isMenuOpen">
-      <!-- Overlay para fechar menu no mobile -->
-      <div class="mobile-overlay" (click)="closeMenu()" *ngIf="isMenuOpen"></div>
-
-      <nav class="navigation">
-        <div class="nav-header">
-          <h3>Menu</h3>
-          <button class="close-btn" (click)="closeMenu()">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-
-        <div class="nav-links">
-          <a routerLink="/" (click)="closeMenu()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <i class="fas fa-home"></i>
-            <span>Início</span>
-          </a>
-
-          <a routerLink="/home" (click)="closeMenu()" routerLinkActive="active">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-          </a>
-
-          <a routerLink="/cardsusuarios" (click)="closeMenu()" routerLinkActive="active">
-            <i class="fas fa-heart"></i>
-            <span>Usuários</span>
-          </a>
-
-          <a routerLink="/cardsestabelecimentos" (click)="closeMenu()" routerLinkActive="active">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Estabelecimentos</span>
-          </a>
-
-          <a routerLink="/criarconta" (click)="closeMenu()" routerLinkActive="active">
-            <i class="fas fa-user-plus"></i>
-            <span>Cadastro usuários</span>
-          </a>
-
-          <a routerLink="/criar-evento" (click)="closeMenu()" routerLinkActive="active">
-            <i class="fas fa-calendar-plus"></i>
-            <span>Cadastro evento</span>
-          </a>
-
-          <a routerLink="/criar-estabelecimento" (click)="closeMenu()" routerLinkActive="active">
-            <i class="fas fa-store"></i>
-            <span>Cadastro estabelecimento</span>
-          </a>
-
-          <!-- <a routerLink="/carrossel" (click)="closeMenu()" routerLinkActive="active">
-            <i class="fas fa-images"></i>
-            <span>Carrossel</span>
-          </a> -->
-
-          <a routerLink="/loginpage" (click)="closeMenu()" routerLinkActive="active">
-            <i class="fas fa-sign-in-alt"></i>
-            <span>Login</span>
-          </a>
-        </div>
-      </nav>
-    </aside>
-  </div>
 </header>
+
+<!-- Menu de navegação separado do header -->
+<div class="main-layout">
+  <aside class="sidebar" [class.mobile-open]="isMenuOpen">
+    <!-- Overlay para fechar menu no mobile -->
+    <div class="mobile-overlay" (click)="closeMenu()" *ngIf="isMenuOpen"></div>
+
+    <nav class="navigation">
+      <div class="nav-header">
+        <h3>Menu</h3>
+        <button class="close-btn" (click)="closeMenu()" aria-label="Fechar menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="nav-links">
+        <a routerLink="/" (click)="closeMenu()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <i class="fas fa-home"></i>
+          <span>Início</span>
+        </a>
+
+        <a routerLink="/home" (click)="closeMenu()" routerLinkActive="active">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+
+        <a routerLink="/cardsusuarios" (click)="closeMenu()" routerLinkActive="active">
+          <i class="fas fa-heart"></i>
+          <span>Usuários</span>
+        </a>
+
+        <a routerLink="/cardsestabelecimentos" (click)="closeMenu()" routerLinkActive="active">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Estabelecimentos</span>
+        </a>
+
+        <a routerLink="/criarconta" (click)="closeMenu()" routerLinkActive="active">
+          <i class="fas fa-user-plus"></i>
+          <span>Cadastro usuários</span>
+        </a>
+
+        <a routerLink="/criar-evento" (click)="closeMenu()" routerLinkActive="active">
+          <i class="fas fa-calendar-plus"></i>
+          <span>Cadastro evento</span>
+        </a>
+
+        <a routerLink="/criar-estabelecimento" (click)="closeMenu()" routerLinkActive="active">
+          <i class="fas fa-store"></i>
+          <span>Cadastro estabelecimento</span>
+        </a>
+
+        <a routerLink="/loginpage" (click)="closeMenu()" routerLinkActive="active">
+          <i class="fas fa-sign-in-alt"></i>
+          <span>Login</span>
+        </a>
+      </div>
+    </nav>
+  </aside>
+</div>

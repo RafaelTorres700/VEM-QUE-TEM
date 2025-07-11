@@ -2,8 +2,13 @@ header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   padding: 16px 20px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  height: 70px;
+  box-sizing: border-box;
 }
 
 .header-content {
@@ -12,9 +17,10 @@ header {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
 
   .logo-img {
-    height: 50px;
+    height: 40px;
     width: auto;
   }
 
@@ -35,49 +41,70 @@ header {
   }
 }
 
-// Botão hamburger
+// Botão hamburger - sempre visível em mobile
 .hamburger-btn {
   display: none;
   flex-direction: column;
   justify-content: space-around;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 4px;
   z-index: 1001;
+  position: relative;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 
   .hamburger-line {
-    width: 25px;
+    width: 24px;
     height: 3px;
     background: white;
     border-radius: 2px;
     transition: all 0.3s ease;
     transform-origin: center;
+    display: block;
   }
 
+  // Animação do hamburger para X
   &.active {
     .hamburger-line:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
+      transform: rotate(45deg) translate(5px, 5px);
     }
 
     .hamburger-line:nth-child(2) {
       opacity: 0;
+      transform: translateX(-20px);
     }
 
     .hamburger-line:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
+      transform: rotate(-45deg) translate(7px, -6px);
     }
   }
 }
 
-// Layout principal
+// Layout principal - Sidebar separada do header
 .main-layout {
+  position: relative;
+
   .sidebar {
     background: #2d3748;
     width: 250px;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 70px);
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 999;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+
+    // Desktop: sidebar sempre visível
+    transform: translateX(0);
     transition: transform 0.3s ease;
 
     .mobile-overlay {
@@ -90,21 +117,28 @@ header {
       border-bottom: 1px solid #4a5568;
       align-items: center;
       justify-content: space-between;
+      background: #1a202c;
 
       h3 {
         color: white;
         margin: 0;
         font-size: 18px;
+        font-weight: 600;
       }
 
       .close-btn {
         background: transparent;
         border: none;
         color: white;
-        font-size: 18px;
+        font-size: 20px;
         cursor: pointer;
-        padding: 4px;
+        padding: 8px;
         border-radius: 4px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
           background: #4a5568;
@@ -115,6 +149,8 @@ header {
     .navigation {
       .nav-links {
         padding: 0;
+        margin: 0;
+        list-style: none;
 
         a {
           display: flex;
@@ -124,11 +160,13 @@ header {
           text-decoration: none;
           transition: all 0.3s ease;
           border-left: 3px solid transparent;
+          cursor: pointer;
 
           i {
             width: 20px;
             margin-right: 12px;
             font-size: 16px;
+            text-align: center;
           }
 
           span {
@@ -146,6 +184,7 @@ header {
             background: #667eea;
             color: white;
             border-left-color: #fff;
+            font-weight: 600;
           }
         }
       }
@@ -153,9 +192,13 @@ header {
   }
 }
 
-// Responsividade para mobile
+// Responsividade - Mobile
 @media (max-width: 768px) {
   .header-content {
+    .logo-img {
+      height: 35px;
+    }
+
     .header-info {
       .logo {
         font-size: 16px;
@@ -167,25 +210,26 @@ header {
     }
   }
 
+  // Mostrar botão hamburger em mobile
   .hamburger-btn {
     display: flex;
   }
 
   .main-layout {
     .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
+      // Mobile: sidebar escondida por padrão
+      transform: translateX(-100%);
       width: 280px;
       height: 100vh;
-      z-index: 1002;
-      transform: translateX(-100%);
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      top: 0;
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
 
+      // Quando menu está aberto
       &.mobile-open {
         transform: translateX(0);
       }
 
+      // Overlay para fechar menu
       .mobile-overlay {
         display: block;
         position: fixed;
@@ -195,10 +239,18 @@ header {
         height: 100vh;
         background: rgba(0, 0, 0, 0.5);
         z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
 
+      &.mobile-open .mobile-overlay {
+        opacity: 1;
+      }
+
+      // Mostrar header do menu em mobile
       .nav-header {
         display: flex;
+        padding-top: 80px; // Espaço para não sobrepor o header fixo
       }
 
       .navigation {
@@ -225,6 +277,7 @@ header {
   }
 }
 
+// Mobile muito pequeno
 @media (max-width: 480px) {
   header {
     padding: 12px 16px;
@@ -232,7 +285,7 @@ header {
 
   .header-content {
     .logo-img {
-      height: 40px;
+      height: 30px;
     }
 
     .header-info {

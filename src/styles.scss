@@ -1,0 +1,39 @@
+// Estilos globais para o menu
+body {
+  margin: 0;
+  padding-top: 70px; // Espaço para header fixo
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: none;
+}
+
+// Prevenir scroll quando menu mobile está aberto
+body.menu-open {
+  @media (max-width: 768px) {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+// Conteúdo principal
+.main-content {
+  margin-left: 0;
+  min-height: calc(100vh - 70px);
+  padding: 20px;
+  box-sizing: border-box;
+
+  // Em desktop, dar espaço para sidebar
+  @media (min-width: 769px) {
+    margin-left: 250px;
+  }
+}
+
+// Animações suaves
+* {
+  box-sizing: border-box;
+}
+
+// Smooth scroll
+html {
+  scroll-behavior: smooth;
+}
