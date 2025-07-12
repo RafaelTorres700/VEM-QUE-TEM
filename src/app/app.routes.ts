@@ -9,6 +9,7 @@ import { SidebarComponent } from '../layout/sidebar/sidebar.component';
 import { CriarEventosComponent } from './formularios/criar-eventos/criar-eventos.component';
 import { CreateEstabelecimentoComponent } from './formularios/create-estabelecimento/create-estabelecimento.component';
 import { authGuard } from './auth.guard';
+import { LoginEstabelecimentoComponent } from './formularios/login-estabelecimento/login-estabelecimento.component';
 
 
 export const routes: Routes = [
@@ -58,6 +59,10 @@ export const routes: Routes = [
     {
         path: "criar-estabelecimento",
         component: CreateEstabelecimentoComponent
+    },
+    {
+        path: "login-estabelecimento",
+        component: LoginEstabelecimentoComponent
     }
 
 

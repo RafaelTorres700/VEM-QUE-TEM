@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-// Importe os componentes necessários
 import { CardsUsuariosComponent } from '../cards-usuarios/cards-usuarios.component';
 import { CardsEstabelecimentosComponent } from '../cards-estabelecimentos/cards-estabelecimentos.component';
 
